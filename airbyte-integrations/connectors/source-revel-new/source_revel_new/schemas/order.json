@@ -3,355 +3,691 @@
     "type": "object",
     "properties": {
         "api_key": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": "string"
         },
         "running_tax_number": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "web_order": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "has_items": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "registry_data": {
-            "type": "object"
+            "type": [
+                "null",
+                "object"
+            ]
         },
         "exchange_discount": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "gift_reward_data": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "uuid": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "created_by": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": "string"
         },
         "service_fee_untaxed": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_tax_amount_included": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "discount_amount": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "fleet_service_data": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "sent": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "exchanged": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "updated_by": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": "string"
         },
         "check_sum": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "delivery_employee": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "crv_value": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "delivery_duration": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "table_owner": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "surcharge_excluded": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "taxable_surcharge_excluded": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "number_of_people": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "notes": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "applied_discounts": {
-            "type": "object"
+            "type": [
+                "null",
+                "array"
+            ]
         },
         "pos_mode": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "ha_applied": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "deleted_discounts": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "points_added": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "smart_order": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "bills_info": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "tax_excluded_amount": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "auto_grat_pct": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "is_discounted": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "tax_rounding_model": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "notification_email_sent": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "delivery_distance": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "gratuity": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "orderhistory": {
-            "type": "array"
+            "type": [
+                "null",
+                "array"
+            ]
         },
         "version": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "closed": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "tax_country": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_code": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "smartpay_tip": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "has_delivery_info": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "asap": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "deleted": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "pickup_time": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "reporting_id": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "discount_nontaxable_surcharge_included": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "taxable_surcharge": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "delivery_address": {
-            "type": "object"
+            "type": [
+                "null",
+                "object"
+            ]
         },
         "final_total": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "package": {
-            "type": "array"
+            "type": [
+                "null",
+                "array"
+            ]
         },
         "is_invoice": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "delivery_clock_in": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "created_date": {
-            "$ref": "WellKnownTypes.json#/definitions/TimestampWithoutTimezone"
+            "type": "string"
         },
         "delivery_clock_out": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_tax_amount": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "rounding_delta": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "drive_through_data": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "is_unpaid": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "customer_address_distance": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "tax_rebate": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "table": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_reason": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "notification_text_sent": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "last_updated_at": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "customer_birthdate": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "gratuity_type": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "vehicle": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "remaining_due": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "applied_taxes": {
-            "type": "array"
+            "type": [
+                "null",
+                "array"
+            ]
         },
         "prevailing_tax": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "billing_address": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "invoice_date": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_rule_type": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "kitchen_status": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "service_charge": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "customer": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "applied_service_fee": {
-            "type": "array"
+            "type": [
+                "null",
+                "array"
+            ]
         },
         "virtual_data": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_taxed": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "has_history": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "billing_zip_code": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "smartpay_gratuity": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "tax": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "bill_number": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "id": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "surcharge": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "points_redeemed": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "call_number": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "delivery_estimated_distance": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "pickup_data": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "bill_parent": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "establishment": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "updated_date": {
-            "$ref": "WellKnownTypes.json#/definitions/TimestampWithoutTimezone"
+            "type": "string"
         },
         "prevailing_surcharge": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "dining_option": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "bills_type": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "call_name": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "printed": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "subtotal": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "device_id": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discounted_by": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_rule_amount": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "number"
+            ]
         },
         "is_readonly": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "external_sync": {
-            "$ref": "WellKnownTypes.json#/definitions/Integer"
+            "type": [
+                "null",
+                "integer"
+            ]
         },
         "created_at": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "service_fee_tax": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "discount_total_amount": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "crv_taxed": {
-            "$ref": "WellKnownTypes.json#/definitions/Boolean"
+            "type": [
+                "null",
+                "boolean"
+            ]
         },
         "local_id": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "service_fee_taxed": {
-            "$ref": "WellKnownTypes.json#/definitions/Number"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "resource_uri": {
-            "$ref": "WellKnownTypes.json#/definitions/String"
+            "type": [
+                "null",
+                "string"
+            ]
         }
     }
 }
