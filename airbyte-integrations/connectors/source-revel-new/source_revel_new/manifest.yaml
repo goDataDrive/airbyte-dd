@@ -65,13 +65,13 @@ definitions:
         cursor_field: "created_date"
 
   # # Main streams here!
-  address_stream:
-    $ref: "*ref(definitions.base_incremental_stream)"
-    $options:
-      pointer_name: "objects"
-      name: "address"
-      primary_key: "id"
-      path: "/Address"
+  # address_stream:
+  #   $ref: "*ref(definitions.base_incremental_stream)"
+  #   $options:
+  #     pointer_name: "objects"
+  #     name: "address"
+  #     primary_key: "id"
+  #     path: "/Address"
 
   order_stream:
     $ref: "*ref(definitions.base_incremental_stream)"
@@ -83,13 +83,12 @@ definitions:
 
 
 streams:
-  - "*ref(definitions.address_stream)"
+  #- "*ref(definitions.address_stream)"
   - "*ref(definitions.order_stream)"
 
 check:
   stream_names:
     - "order"
-    - "address"
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
