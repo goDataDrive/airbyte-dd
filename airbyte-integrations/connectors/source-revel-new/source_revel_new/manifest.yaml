@@ -49,7 +49,7 @@ definitions:
     
       # Base stream here!
   base_stream:
-    #primary_key: "id"
+    primary_key: "id"
     type: DeclarativeStream
     retriever:
       $ref: "*ref(definitions.retriever)"
@@ -60,9 +60,9 @@ definitions:
     retriever:
       $ref: "*ref(definitions.retriever)"
       requester: "*ref(definitions.requester)"
-      stream_slicer:
-        request_cursor_field: "created_date" # updated_after
-        cursor_field: "created_date"
+      # stream_slicer:
+      #   request_cursor_field: "updated_date" # updated_after
+      #   cursor_field: "updated_date"
 
   # # Main streams here!
   address_stream:
@@ -88,8 +88,8 @@ streams:
 
 check:
   stream_names:
-    - "order"
     - "address"
+    - "order"
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
