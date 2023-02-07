@@ -5,25 +5,25 @@
       "type": "boolean"
     },
     "alias": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "building_number": {
       "type": ["null","string"]
     },
     "city_name": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "country": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "county": {
       "type": ["null","string"]
     },
     "created_by": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "created_date": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "district": {
       "type": ["null","string"]
@@ -44,10 +44,10 @@
       ]
     },
     "line_1": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "line_2": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "longitude": {
       "type": [
@@ -59,7 +59,7 @@
       "type": ["null","string"]
     },
     "resource_uri": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "state": {
       "type": [
@@ -68,16 +68,16 @@
       ]
     },
     "updated_by": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "updated_date": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "uuid": {
-      "type": "string"
+      "type": ["string","null"]
     },
     "zipcode": {
-      "type": "string"
+      "type": ["string","null"]
     }
   },
   "type": "object"

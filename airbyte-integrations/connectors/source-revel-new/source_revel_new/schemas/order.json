@@ -61,7 +61,7 @@
         },
         "type": "object"
       },
-      "type": "array"
+      "type": ["null","array"]
     },
     "applied_service_fee": {
       "items": {
