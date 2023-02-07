@@ -1,49 +1,26 @@
 {
   "streams": [
     {
-      "cursor_field": null,
-      "destination_sync_mode": "append",
-      "primary_key": null,
       "stream": {
-        "default_cursor_field": null,
+        "name": "order",
         "json_schema": {},
+        "supported_sync_modes": [
+          "full_refresh", "incremental"
+        ]
+      },
+      "sync_mode": "incremental",
+      "destination_sync_mode": "append"
+     },
+     {
+      "stream": {
         "name": "address",
-        "namespace": null,
-        "source_defined_cursor": null,
-        "source_defined_primary_key": [
-          [
-            "{{ options['primary_key'] }}"
-          ]
-        ],
+        "json_schema": {},
         "supported_sync_modes": [
           "full_refresh"
         ]
       },
-      "sync_mode": "full_refresh"
-    },
-    {
-      "cursor_field": null,
-      "destination_sync_mode": "append",
-      "primary_key": null,
-      "stream": {
-        "default_cursor_field": [
-          "updated_date"
-        ],
-        "json_schema": {},
-        "name": "order",
-        "namespace": null,
-        "source_defined_cursor": true,
-        "source_defined_primary_key": [
-          [
-            "{{ options['primary_key'] }}"
-          ]
-        ],
-        "supported_sync_modes": [
-          "full_refresh",
-          "incremental"
-        ]
-      },
-      "sync_mode": "full_refresh"
-    }
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+     }
   ]
 }

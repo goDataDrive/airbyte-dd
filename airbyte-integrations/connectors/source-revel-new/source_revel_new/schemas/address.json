@@ -8,7 +8,7 @@
       "type": "string"
     },
     "building_number": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "city_name": {
       "type": "string"
@@ -17,7 +17,7 @@
       "type": "string"
     },
     "county": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "created_by": {
       "type": "string"
@@ -26,10 +26,10 @@
       "type": "string"
     },
     "district": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "door": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "id": {
       "type": "integer"
@@ -56,7 +56,7 @@
       ]
     },
     "province": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "resource_uri": {
       "type": "string"

@@ -85,13 +85,13 @@
             "type": "integer"
           },
           "include_employee_pass_through_fee_in": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "invoice_document_uuid": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "item": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "local_service_fee_id": {
             "type": "integer"
@@ -103,10 +103,10 @@
             "type": "string"
           },
           "parent_uuid": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "pass_through_fee_type": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "passthrough_amount": {
             "type": "string"
@@ -153,7 +153,7 @@
       "items": {
         "properties": {
           "dining_options": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "fiscal_rate": {
             "type": "string"
@@ -210,7 +210,7 @@
             "type": "string"
           },
           "tax_table": {
-            "type": "null"
+            "type": ["null","string"]
           },
           "tax_type": {
             "type": "integer"
@@ -236,16 +236,16 @@
       "type": "integer"
     },
     "bill_parent": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "billing_address": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "billing_zip_code": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "bills_info": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "bills_type": {
       "type": "integer"
@@ -257,7 +257,7 @@
       ]
     },
     "call_number": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "check_sum": {
       "type": [
@@ -316,7 +316,7 @@
     "delivery_address": {
       "anyOf": [
         {
-          "type": "null"
+          "type": ["null","string"]
         },
         {
           "properties": {
@@ -392,10 +392,10 @@
       ]
     },
     "delivery_distance": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "delivery_duration": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "delivery_employee": {
       "type": [
@@ -404,10 +404,10 @@
       ]
     },
     "delivery_estimated_distance": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "device_id": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "dining_option": {
       "type": "integer"
@@ -425,10 +425,10 @@
       ]
     },
     "discount_code": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "discount_nontaxable_surcharge_included": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "discount_reason": {
       "type": [
@@ -449,7 +449,7 @@
       ]
     },
     "discount_tax_amount": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "discount_tax_amount_included": {
       "type": [
@@ -473,25 +473,25 @@
       ]
     },
     "drive_through_data": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "establishment": {
       "type": "string"
     },
     "exchange_discount": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "exchanged": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "external_sync": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "final_total": {
       "type": "number"
     },
     "fleet_service_data": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "gift_reward_data": {
       "type": "string"
@@ -580,7 +580,7 @@
     "pickup_data": {
       "anyOf": [
         {
-          "type": "null"
+          "type": ["null","string"]
         },
         {
           "properties": {
@@ -615,13 +615,13 @@
               "type": "integer"
             },
             "vehicle_color": {
-              "type": "null"
+              "type": ["null","string"]
             },
             "vehicle_make": {
-              "type": "null"
+              "type": ["null","string"]
             },
             "vehicle_type": {
-              "type": "null"
+              "type": ["null","string"]
             }
           },
           "type": "object"
@@ -653,7 +653,7 @@
       "type": "boolean"
     },
     "registry_data": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "remaining_due": {
       "type": "number"
@@ -716,10 +716,10 @@
       "type": "number"
     },
     "table": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "table_owner": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "tax": {
       "type": "number"
@@ -758,7 +758,7 @@
       "type": "string"
     },
     "vehicle": {
-      "type": "null"
+      "type": ["null","string"]
     },
     "version": {
       "type": [
@@ -769,7 +769,7 @@
     "virtual_data": {
       "anyOf": [
         {
-          "type": "null"
+          "type": ["null","string"]
         },
         {
           "properties": {

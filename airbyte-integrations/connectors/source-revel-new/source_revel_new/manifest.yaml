@@ -16,7 +16,7 @@ definitions:
   # Rquest component for configuring and describing how to connect to the API source
   requester:
     type: HttpRequester
-    name: "{{ options['name'] }}"
+    #name: "{{ options['name'] }}"
     url_base: "https://savoypizza.revelup.com/resources/"
     http_method: "GET"
     authenticator:
@@ -24,15 +24,15 @@ definitions:
       header: "API-Authentication"
       api_token: "{{ config['api_key'] }}"
     error_handler:
-      type: CompositeErrorHandler
-      error_handlers:
-        - type: DefaultErrorHandler
+      response_filters:
+          - http_codes: [ 401 ]
+            action: RETRY
+          - http_codes: [ 301 ]
+            action: RETRY
 
   #----- retriever ------
   retriever:
     type: SimpleRetriever
-    name: "{{ options['name'] }}"
-    primary_key: "{{ options['primary_key'] }}"
     record_selector:
       $ref: "*ref(definitions.selector)"
     paginator:
@@ -47,18 +47,18 @@ definitions:
       page_token_option:
         field_name: "offset"
         inject_into: "request_parameter"
+    requester:
+      $ref: "*ref(definitions.requester)"
  
     
       # Base stream here!
   base_stream:
-    primary_key: "{{ options['primary_key'] }}"
+   # primary_key: "{{ options['primary_key'] }}"
     type: DeclarativeStream
     schema_loader:
       $ref: "*ref(definitions.schema_loader)"
     retriever:
       $ref: "*ref(definitions.retriever)"
-      requester:
-        $ref: "*ref(definitions.requester)"
 
   base_incremental_stream:
     $ref: "*ref(definitions.base_stream)"
