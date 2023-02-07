@@ -25,7 +25,7 @@ definitions:
             action: RETRY
           - http_codes: [ 301 ]
             action: RETRY
-
+            
   #----- retriever ------
   retriever:
     type: SimpleRetriever
@@ -39,7 +39,7 @@ definitions:
         field_name: "limit"
       pagination_strategy:
         type: "OffsetIncrement"
-        page_size: 200
+        page_size: 500
       page_token_option:
         field_name: "offset"
         inject_into: "request_parameter"
