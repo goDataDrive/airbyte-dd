@@ -62,13 +62,13 @@ definitions:
 
   base_incremental_stream:
     $ref: "*ref(definitions.base_stream)"
-    stream_cursor_field: "updated_date" 
+   # stream_cursor_field: "updated_date" 
     retriever:
       $ref: "*ref(definitions.retriever)"
       requester: "*ref(definitions.requester)"
-      stream_slicer:
-        request_cursor_field: "updated_date" # updated_after
-        cursor_field: "updated_date"
+      #stream_slicer:
+      #  request_cursor_field: "updated_date" # updated_after
+      #  cursor_field: "updated_date"
 
   # # Main streams here!
   address_stream:
@@ -85,7 +85,8 @@ definitions:
       pointer_name: "objects"
       name: "order"
       primary_key: "id"
-      path: "/Order"
+      # Leaving this here to limit results for now until incremental working
+      path: "/Order?created_date__gt=2023-02-01T19:58:25"
 
 
 
