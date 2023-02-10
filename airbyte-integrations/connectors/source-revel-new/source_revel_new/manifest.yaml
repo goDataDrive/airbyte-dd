@@ -4,8 +4,8 @@ definitions:
   schema_loader:
       type: JsonFileSchemaLoader
       file_path: "./source_revel_new/schemas/{{ options['name'] }}.json"
-  #----- Selector ------
 
+  #----- Selector ------
   selector:
     type: RecordSelector
     extractor:
@@ -50,8 +50,7 @@ definitions:
     requester:
       $ref: "*ref(definitions.requester)"
  
-    
-      # Base stream here!
+  # Base stream here!
   base_stream:
    # primary_key: "{{ options['primary_key'] }}"
     type: DeclarativeStream
@@ -66,6 +65,7 @@ definitions:
     retriever:
       $ref: "*ref(definitions.retriever)"
       requester: "*ref(definitions.requester)"
+
       #stream_slicer:
       #  request_cursor_field: "updated_date" # updated_after
       #  cursor_field: "updated_date"
@@ -87,8 +87,6 @@ definitions:
       primary_key: "id"
       # Leaving this here to limit results for now until incremental working
       path: "/Order?created_date__gt=2023-02-01T19:58:25"
-
-
 
 streams:
   - "*ref(definitions.address_stream)"

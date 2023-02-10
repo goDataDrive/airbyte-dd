@@ -1,35 +1,63 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
   "properties": {
     "active": {
       "type": "boolean"
     },
     "alias": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "building_number": {
-      "type": ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "city_name": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "country": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "county": {
-      "type": ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "created_by": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "created_date": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "district": {
-      "type": ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "door": {
-      "type": ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "id": {
       "type": "integer"
@@ -44,10 +72,16 @@
       ]
     },
     "line_1": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "line_2": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "longitude": {
       "type": [
@@ -56,10 +90,16 @@
       ]
     },
     "province": {
-      "type": ["null","string"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "resource_uri": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "state": {
       "type": [
@@ -68,17 +108,28 @@
       ]
     },
     "updated_by": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "updated_date": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "uuid": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "zipcode": {
-      "type": ["string","null"]
+      "type": [
+        "null",
+        "string"
+      ]
     }
-  },
-  "type": "object"
+  }
 }
