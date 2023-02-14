@@ -76,12 +76,30 @@ definitions:
     retriever:
       $ref: "*ref(definitions.retriever)"
       requester: "*ref(definitions.requester)"
-    stream_slicer:
-      type: "DatetimeStreamSlicer"
-      request_cursor_field: "updated_date" # updated_after
-      cursor_field: "updated_date"
 
-
+      stream_slicer:
+        type: "DatetimeStreamSlicer"
+        start_datetime:
+          datetime: "2023-02-12"
+          datetime_format: "%Y-%m-%d"
+        end_datetime:
+          datetime: "{{ now_utc() }}"
+          datetime_format: "%Y-%m-%d %H:%M:%S.%f+00:00"
+        step: "P1D"
+        datetime_format: "%Y-%m-%d"
+        cursor_granularity: "P1D"
+        cursor_field: "updated_date"
+    # stream_slicer:
+    #   type: "DatetimeStreamSlicer"
+    #   request_cursor_field: "updated_date" # updated_after
+    #   cursor_field: "updated_date"
+    #   start_time_option:
+    #     field_name: "created_date__gte=2023-1-01T19:58:25"
+    #     inject_into: "request_parameter"
+    #   end_time_option:
+    #     field_name: "created_date__lte=2023-1-13T19:58:25"
+    #     inject_into: "request_parameter"
+      
   # # Main streams here!
   address_stream:
     $ref: "*ref(definitions.base_stream)"
