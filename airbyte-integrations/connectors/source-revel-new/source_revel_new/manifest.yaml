@@ -80,7 +80,7 @@ definitions:
       stream_slicer:
         type: "DatetimeStreamSlicer"
         start_datetime:
-          datetime: "2023-02-14T01:01:01"
+          datetime:  "{{ config['start_date'] }}" #"2023-02-14T01:01:01"
           datetime_format: "%Y-%m-%dT%H:%M:%S"
         end_datetime:
           datetime: "{{ now_utc().strftime('%Y-%m-%dT%H:%M:%S') }}"
@@ -151,10 +151,18 @@ spec:
     type: object
     required:
       - api_key
+      - start_date
     additionalProperties: true
     properties:
       api_key:
         type: string
         description: >-
-          Your API Access Key.
+          Enter Revel API Access Key.
         airbyte_secret: true
+      start_date:
+        type: string
+        description: Enter Start date of getting data from Revel API.
+        pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$"
+        examples:
+          - YYYY-MM-DDTh:m:s
+          - "2023-02-14T01:01:01"
