@@ -95,6 +95,7 @@ definitions:
         end_time_option:
           field_name: "updated_date__lte"
           inject_into: "request_parameter"
+
 # "updated_date__gt=2023-02-01T19:58:25?updated_date__lte=2023-02-15T08:30:00"
 
     # stream_slicer:
@@ -133,16 +134,27 @@ definitions:
       primary_key: "uuid"
       # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
       path: "/Order" 
+
+
+  customer_stream:
+    $ref: "*ref(definitions.base_incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "customer"
+      primary_key: "uuid"
+      # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
+      path: "/Customer" 
       
 
 streams:
   - "*ref(definitions.address_stream)" 
   - "*ref(definitions.order_stream)"
-
+  - "*ref(definitions.customer_stream)"
 check:
   stream_names:
-    - "address"
-    - "order"
+   - "customer"
+   - "address"
+   - "order"
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
