@@ -1,0 +1,527 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OrderItem stream schema",
+    "type": "object",
+    "properties": {
+        "applied_discounts": {
+            "type": "array",
+            "items": {}
+        },
+        "applied_service_fee": {
+            "type": "array",
+            "items": {}
+        },
+        "applied_taxes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "actual_tax_rate": {
+                        "type": "string"
+                    },
+                    "fiscal_rate": {
+                        "type": "string"
+                    },
+                    "flat_tax_units": {
+                        "type": "number"
+                    },
+                    "id": {
+                        "type": "number"
+                    },
+                    "local_tax_id": {},
+                    "max_quantity_threshold": {},
+                    "max_threshold": {},
+                    "min_quantity_threshold": {},
+                    "min_threshold": {},
+                    "name": {
+                        "type": "string"
+                    },
+                    "on_full_price": {
+                        "type": "boolean"
+                    },
+                    "order_item": {
+                        "type": "string"
+                    },
+                    "resource_uri": {
+                        "type": "string"
+                    },
+                    "rounding_type": {
+                        "type": "number"
+                    },
+                    "tax_amount": {
+                        "type": "string"
+                    },
+                    "tax_rate": {
+                        "type": "string"
+                    },
+                    "tax_table": {},
+                    "tax_type": {
+                        "type": "number"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "actual_tax_rate",
+                    "fiscal_rate",
+                    "flat_tax_units",
+                    "id",
+                    "local_tax_id",
+                    "max_quantity_threshold",
+                    "max_threshold",
+                    "min_quantity_threshold",
+                    "min_threshold",
+                    "name",
+                    "on_full_price",
+                    "order_item",
+                    "resource_uri",
+                    "rounding_type",
+                    "tax_amount",
+                    "tax_rate",
+                    "tax_table",
+                    "tax_type",
+                    "uuid"
+                ]
+            }
+        },
+        "appointment": {},
+        "appointment_ref_uuid": {},
+        "bill_parent": {},
+        "catering_complete": {
+            "type": "boolean"
+        },
+        "catering_delivery_date": {},
+        "combo_fraction_part": {
+            "type": "number"
+        },
+        "combo_product_set": {},
+        "combo_saving_amount": {
+            "type": "string"
+        },
+        "combo_type": {
+            "type": "number"
+        },
+        "combo_used": {},
+        "combo_uuid": {},
+        "commission_amount": {
+            "type": "string"
+        },
+        "commissions": {
+            "type": "array",
+            "items": {}
+        },
+        "cost": {
+            "type": "string"
+        },
+        "course_number": {
+            "type": "number"
+        },
+        "created_by": {
+            "type": "string"
+        },
+        "created_date": {
+            "type": "string"
+        },
+        "crv_value": {
+            "type": "number"
+        },
+        "cup_qty": {
+            "type": "number"
+        },
+        "cup_weight": {
+            "type": "number"
+        },
+        "date_paid": {},
+        "deleted": {
+            "type": "boolean"
+        },
+        "deleted_date": {},
+        "dining_option": {
+            "type": "number"
+        },
+        "discount": {},
+        "discount_amount": {},
+        "discount_code": {},
+        "discount_reason": {
+            "type": "string"
+        },
+        "discount_rule_amount": {},
+        "discount_rule_type": {},
+        "discount_tax_amount_included": {
+            "type": "string"
+        },
+        "discount_taxed": {},
+        "discounted_by": {},
+        "dynamic_combo": {},
+        "dynamic_combo_slot": {},
+        "ervc_type": {
+            "type": "number"
+        },
+        "event_date": {},
+        "exchange_discount": {},
+        "exchanged": {},
+        "exclude_from_discounts": {
+            "type": "boolean"
+        },
+        "expedited": {},
+        "external_shipping_address": {},
+        "gift_card_number": {},
+        "id": {
+            "type": "number"
+        },
+        "ingredientitems": {
+            "type": "array",
+            "items": {}
+        },
+        "initial_price": {
+            "type": "number"
+        },
+        "invoice_document_uuid": {},
+        "is_cold": {
+            "type": "boolean"
+        },
+        "is_discounted": {
+            "type": "boolean"
+        },
+        "is_layaway": {
+            "type": "boolean"
+        },
+        "is_store_credit": {
+            "type": "boolean"
+        },
+        "item_type": {
+            "type": "number"
+        },
+        "kitchen_completed": {},
+        "manual_unit_price_adjustment": {
+            "type": "number"
+        },
+        "modifier_amount": {
+            "type": "number"
+        },
+        "modifier_cost": {
+            "type": "string"
+        },
+        "modifieritems": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "conditional_of": {},
+                    "id": {
+                        "type": "number"
+                    },
+                    "is_discounted": {
+                        "type": "boolean"
+                    },
+                    "is_substituted": {
+                        "type": "boolean"
+                    },
+                    "mod_type": {
+                        "type": "number"
+                    },
+                    "modifier": {
+                        "type": "string"
+                    },
+                    "modifier_cost": {
+                        "type": "string"
+                    },
+                    "modifier_price": {
+                        "type": "number"
+                    },
+                    "no_modifier_substitute": {
+                        "type": "boolean"
+                    },
+                    "order_item": {
+                        "type": "string"
+                    },
+                    "qty": {
+                        "type": "number"
+                    },
+                    "qty_type": {
+                        "type": "number"
+                    },
+                    "resource_uri": {
+                        "type": "string"
+                    },
+                    "split_combo_data": {
+                        "type": "object",
+                        "properties": {},
+                        "required": []
+                    },
+                    "substitution_of": {},
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "conditional_of",
+                    "id",
+                    "is_discounted",
+                    "is_substituted",
+                    "mod_type",
+                    "modifier",
+                    "modifier_cost",
+                    "modifier_price",
+                    "no_modifier_substitute",
+                    "order_item",
+                    "qty",
+                    "qty_type",
+                    "resource_uri",
+                    "split_combo_data",
+                    "substitution_of",
+                    "uuid"
+                ]
+            }
+        },
+        "not_returnable": {
+            "type": "boolean"
+        },
+        "on_hold": {
+            "type": "boolean"
+        },
+        "on_layaway": {},
+        "order": {
+            "type": "string"
+        },
+        "order_local_id": {
+            "type": "string"
+        },
+        "package": {},
+        "package_uuid": {},
+        "parent_combo_uuid": {},
+        "parent_uuid": {},
+        "price": {
+            "type": "number"
+        },
+        "price_to_display": {
+            "type": "string"
+        },
+        "printed": {
+            "type": "boolean"
+        },
+        "product": {
+            "type": "string"
+        },
+        "product_name_override": {
+            "type": "string"
+        },
+        "pump_date": {},
+        "pump_number": {},
+        "pure_sales": {
+            "type": "number"
+        },
+        "quantity": {
+            "type": "number"
+        },
+        "reference_discount": {
+            "type": "string"
+        },
+        "reference_discounts": {
+            "type": "string"
+        },
+        "resource_uri": {
+            "type": "string"
+        },
+        "returned_establishment": {},
+        "sales_tax_exemption_reason": {
+            "type": "string"
+        },
+        "scanned_barcode": {},
+        "seat_number": {
+            "type": "number"
+        },
+        "sent": {
+            "type": "boolean"
+        },
+        "serial_number": {},
+        "service_fee_tax": {
+            "type": "string"
+        },
+        "service_fee_taxed": {
+            "type": "string"
+        },
+        "service_fee_untaxed": {
+            "type": "string"
+        },
+        "service_provider": {},
+        "shared": {
+            "type": "number"
+        },
+        "sold_by_weight": {
+            "type": "boolean"
+        },
+        "special_request": {},
+        "split_parts": {
+            "type": "number"
+        },
+        "split_type": {
+            "type": "number"
+        },
+        "split_with_seat": {
+            "type": "number"
+        },
+        "start_time": {},
+        "station": {
+            "type": "string"
+        },
+        "tax_amount": {
+            "type": "number"
+        },
+        "tax_included": {
+            "type": "boolean"
+        },
+        "tax_rate": {
+            "type": "number"
+        },
+        "tax_rebate": {
+            "type": "number"
+        },
+        "taxed_flag": {
+            "type": "boolean"
+        },
+        "temp_sort": {
+            "type": "number"
+        },
+        "uom": {},
+        "updated_by": {
+            "type": "string"
+        },
+        "updated_date": {
+            "type": "string"
+        },
+        "uuid": {
+            "type": "string"
+        },
+        "void_ref_uuid": {},
+        "voided_by": {},
+        "voided_date": {},
+        "voided_reason": {
+            "type": "string"
+        },
+        "weight": {
+            "type": "number"
+        },
+        "wholesale_saving_amount": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "applied_discounts",
+        "applied_service_fee",
+        "applied_taxes",
+        "appointment",
+        "appointment_ref_uuid",
+        "bill_parent",
+        "catering_complete",
+        "catering_delivery_date",
+        "combo_fraction_part",
+        "combo_product_set",
+        "combo_saving_amount",
+        "combo_type",
+        "combo_used",
+        "combo_uuid",
+        "commission_amount",
+        "commissions",
+        "cost",
+        "course_number",
+        "created_by",
+        "created_date",
+        "crv_value",
+        "cup_qty",
+        "cup_weight",
+        "date_paid",
+        "deleted",
+        "deleted_date",
+        "dining_option",
+        "discount",
+        "discount_amount",
+        "discount_code",
+        "discount_reason",
+        "discount_rule_amount",
+        "discount_rule_type",
+        "discount_tax_amount_included",
+        "discount_taxed",
+        "discounted_by",
+        "dynamic_combo",
+        "dynamic_combo_slot",
+        "ervc_type",
+        "event_date",
+        "exchange_discount",
+        "exchanged",
+        "exclude_from_discounts",
+        "expedited",
+        "external_shipping_address",
+        "gift_card_number",
+        "id",
+        "ingredientitems",
+        "initial_price",
+        "invoice_document_uuid",
+        "is_cold",
+        "is_discounted",
+        "is_layaway",
+        "is_store_credit",
+        "item_type",
+        "kitchen_completed",
+        "manual_unit_price_adjustment",
+        "modifier_amount",
+        "modifier_cost",
+        "modifieritems",
+        "not_returnable",
+        "on_hold",
+        "on_layaway",
+        "order",
+        "order_local_id",
+        "package",
+        "package_uuid",
+        "parent_combo_uuid",
+        "parent_uuid",
+        "price",
+        "price_to_display",
+        "printed",
+        "product",
+        "product_name_override",
+        "pump_date",
+        "pump_number",
+        "pure_sales",
+        "quantity",
+        "reference_discount",
+        "reference_discounts",
+        "resource_uri",
+        "returned_establishment",
+        "sales_tax_exemption_reason",
+        "scanned_barcode",
+        "seat_number",
+        "sent",
+        "serial_number",
+        "service_fee_tax",
+        "service_fee_taxed",
+        "service_fee_untaxed",
+        "service_provider",
+        "shared",
+        "sold_by_weight",
+        "special_request",
+        "split_parts",
+        "split_type",
+        "split_with_seat",
+        "start_time",
+        "station",
+        "tax_amount",
+        "tax_included",
+        "tax_rate",
+        "tax_rebate",
+        "taxed_flag",
+        "temp_sort",
+        "uom",
+        "updated_by",
+        "updated_date",
+        "uuid",
+        "void_ref_uuid",
+        "voided_by",
+        "voided_date",
+        "voided_reason",
+        "weight",
+        "wholesale_saving_amount"
+    ]
+}

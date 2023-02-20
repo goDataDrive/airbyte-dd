@@ -43,7 +43,7 @@ definitions:
         field_name: "limit"
       pagination_strategy:
         type: "OffsetIncrement"
-        page_size: 500
+        page_size: 300
       page_token_option:
         field_name: "offset"
         inject_into: "request_parameter"
@@ -131,16 +131,17 @@ definitions:
       pointer_name: "objects"
       name: "order"
       primary_key: "uuid"
-      # Leaving this here to limit results for now until incremental working
-      path: "/Order?created_date__gt=2023-02-01T19:58:25"
+      # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
+      path: "/Order" 
+      
 
 streams:
-  - "*ref(definitions.address_stream)"
+  - "*ref(definitions.address_stream)" 
   - "*ref(definitions.order_stream)"
 
 check:
   stream_names:
-   # - "address"
+    - "address"
     - "order"
 
 spec: 
