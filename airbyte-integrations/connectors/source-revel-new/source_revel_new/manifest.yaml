@@ -16,7 +16,7 @@ definitions:
   # Rquest component for configuring and describing how to connect to the API source
   requester:
     type: HttpRequester
-    #name: "{{ options['name'] }}"
+    name: "{{ options['name'] }}"
     url_base: "https://savoypizza.revelup.com/resources/"
     http_method: "GET"
     authenticator:
@@ -52,24 +52,13 @@ definitions:
  
   # Base stream here!
   base_stream:
-   # primary_key: "{{ options['primary_key'] }}"
+    primary_key: "{{ options['primary_key'] }}"
     type: DeclarativeStream
     schema_loader:
       $ref: "*ref(definitions.schema_loader)"
     retriever:
       $ref: "*ref(definitions.retriever)"
 
-  # Base stream for incremental sync
-  # base_incremental_stream:
-  #   $ref: "*ref(definitions.base_stream)"
-  #  # stream_cursor_field: "updated_date" 
-  #   retriever:
-  #     $ref: "*ref(definitions.retriever)"
-  #     requester: "*ref(definitions.requester)"
-
-      #stream_slicer:
-      #  request_cursor_field: "updated_date" # updated_after
-      #  cursor_field: "updated_date"
   base_incremental_stream:
     $ref: "*ref(definitions.base_stream)"
     stream_cursor_field: "updated_date" 
@@ -83,11 +72,11 @@ definitions:
           datetime:  "{{ config['start_date'] }}" #"2023-02-14T01:01:01"
           datetime_format: "%Y-%m-%dT%H:%M:%S"
         end_datetime:
-          datetime: "{{ now_utc().strftime('%Y-%m-%dT%H:%M:%S') }}"
-          datetime_format: "%Y-%m-%dT%H:%M:%S"
+          datetime: "{{ now_utc() }}" # "{{now_utc().strftime('%Y-%m-%dT%H:%M:%S') }}"
+          datetime_format: "%Y-%m-%d %H:%M:%S.%f+00:00"
         step: "P1D"
         datetime_format: "%Y-%m-%dT%H:%M:%S"
-        cursor_granularity: "PT1S"
+        cursor_granularity: "PT0.000001S"  # "PT1S", "PT0.000001S"
         cursor_field: "updated_date"
         start_time_option:
           field_name: "updated_date__gt"
@@ -96,36 +85,45 @@ definitions:
           field_name: "updated_date__lte"
           inject_into: "request_parameter"
 
-# "updated_date__gt=2023-02-01T19:58:25?updated_date__lte=2023-02-15T08:30:00"
+  incremental_stream:
+    $ref: "*ref(definitions.base_stream)"
+    stream_cursor_field: "updated_date" 
+    retriever:
+      $ref: "*ref(definitions.retriever)"
+      requester: "*ref(definitions.requester)"
 
-    # stream_slicer:
-    #   type: "DatetimeStreamSlicer"
-    #   request_cursor_field: "updated_date" # updated_after
-    #   cursor_field: "updated_date"
-    #   start_time_option:
-    #     field_name: "updated_date__gt"
-    #     inject_into: "request_parameter"
-    #   end_time_option:
-    #     field_name: "created_date__lte=2023-1-13T19:58:25"
-    #     inject_into: "request_parameter"
+      stream_slicer:
+        type: "DatetimeStreamSlicer"
+        start_datetime:
+          datetime:  "{{ config['start_date'] + '.000000' }}" # "2023-01-03T21:29:36.755625"
+          datetime_format: "%Y-%m-%dT%H:%M:%S.%f"
+        end_datetime:
+          datetime: "{{ now_utc().strftime('%Y-%m-%dT%H:%M:%S.%f') }}" # "{{now_utc().strftime('%Y-%m-%dT%H:%M:%S') }}" 
+          datetime_format: "%Y-%m-%dT%H:%M:%S.%f"
+        step: "P1D"
+        datetime_format: "%Y-%m-%dT%H:%M:%S.%f"
+        cursor_granularity: "PT0.000001S"  # "PT1S", "PT0.000001S"
+        cursor_field: "updated_date"
+        start_time_option:
+          field_name: "updated_date__gt"
+          inject_into: "request_parameter"
+        end_time_option:
+          field_name: "updated_date__lte"
+          inject_into: "request_parameter"
 
-    # start_datetime:
-    #           datetime: "{{ config['start_date'] }}"
-    #           datetime_format: "%Y-%m-%dT%H:%M:%S%z"
-    #         end_datetime:
-    #           datetime: "{{ now_utc().strftime('%Y-%m-%dT%H:%M:%S%z') }}"
-    #           datetime_format: "%Y-%m-%dT%H:%M:%S%z"
-    #         datetime_format: "%Y-%m-%dT%H:%M:%S.%f%z"
-      
-  # # Main streams here!
+  # ----- STREAMS ----
+
+  # Address Stream 
   address_stream:
     $ref: "*ref(definitions.base_stream)"
     $options:
       pointer_name: "objects"
       name: "address"
-      primary_key: "id"
-      path: "/Address"
+      primary_key: "uuid"
+      # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
+      path: "/Address" 
 
+  # Order Stream 
   order_stream:
     $ref: "*ref(definitions.base_incremental_stream)"
     $options:
@@ -135,26 +133,49 @@ definitions:
       # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
       path: "/Order" 
 
-
-  customer_stream:
+  # OrderItem Stream 
+  orderitem_stream:
     $ref: "*ref(definitions.base_incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "orderitem"
+      primary_key: "uuid"
+      path: "/Orderitem" 
+
+  # Product Stream 
+  product_stream:
+    $ref: "*ref(definitions.incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "product"
+      primary_key: "uuid"
+      path: "/Product" 
+
+
+  # Customer Stream 
+  customer_stream:
+    $ref: "*ref(definitions.incremental_stream)"
     $options:
       pointer_name: "objects"
       name: "customer"
       primary_key: "uuid"
-      # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
       path: "/Customer" 
-      
+
 
 streams:
   - "*ref(definitions.address_stream)" 
   - "*ref(definitions.order_stream)"
+  - "*ref(definitions.orderitem_stream)"
   - "*ref(definitions.customer_stream)"
+  - "*ref(definitions.product_stream)"
+
 check:
   stream_names:
-   - "customer"
    - "address"
    - "order"
+   - "customer"
+   - "orderitem"
+   - "product"
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
@@ -178,4 +199,4 @@ spec:
         pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$"
         examples:
           - YYYY-MM-DDTh:m:s
-          - "2023-02-14T01:01:01"
+          - "2022-07-20T01:01:01"
