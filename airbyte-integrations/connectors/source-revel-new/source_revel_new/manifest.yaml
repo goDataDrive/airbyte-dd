@@ -3,7 +3,7 @@ version: "0.1.0"
 definitions:
   schema_loader:
       type: JsonFileSchemaLoader
-      file_path: "./source_revel_new/schemas/{{ options['name'] }}.json"
+      file_path: "./source_revel_new/schemas/{{options['name'] }}.json"
 
   #----- Selector ------
   selector:
@@ -52,7 +52,7 @@ definitions:
  
   # Base stream here!
   base_stream:
-    primary_key: "{{ options['primary_key'] }}"
+    #primary_key: "{{ options['primary_key'] }}"
     type: DeclarativeStream
     schema_loader:
       $ref: "*ref(definitions.schema_loader)"
@@ -140,7 +140,7 @@ definitions:
       pointer_name: "objects"
       name: "orderitem"
       primary_key: "uuid"
-      path: "/Orderitem" 
+      path: "/OrderItem" 
 
   # Product Stream 
   product_stream:
@@ -151,7 +151,6 @@ definitions:
       primary_key: "uuid"
       path: "/Product" 
 
-
   # Customer Stream 
   customer_stream:
     $ref: "*ref(definitions.incremental_stream)"
@@ -160,7 +159,6 @@ definitions:
       name: "customer"
       primary_key: "uuid"
       path: "/Customer" 
-
 
 streams:
   - "*ref(definitions.address_stream)" 
@@ -171,11 +169,11 @@ streams:
 
 check:
   stream_names:
-   - "address"
-   - "order"
-   - "customer"
-   - "orderitem"
-   - "product"
+    - "address"
+    - "order"
+    - "customer"
+    - "orderitem"
+    - "product"
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "OrderItem stream schema",
+    "title": "orderitem schema",
     "type": "object",
     "properties": {
         "applied_discounts": {

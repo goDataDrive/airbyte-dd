@@ -42,5 +42,6 @@
       "source.fixAll.stylelint": true
     }
   },
-  "typescript.tsdk": "./airbyte-webapp/node_modules/typescript/lib"
+  "typescript.tsdk": "./airbyte-webapp/node_modules/typescript/lib",
+  "dbt.queryLimit": 500
 }
