@@ -2,14 +2,22 @@ spec:
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
   connection_specification:
     $schema: http://json-schema.org/draft-07/schema#
-    title: ravel Source Spec
+    title: Ravel Source Spec
     type: object
     required:
       - api_key
+      - start_date
     additionalProperties: true
     properties:
       api_key:
         type: string
         description: >-
-          Your API Access Key.
+          Enter Revel API Access Key.
         airbyte_secret: true
+      start_date:
+        type: string
+        description: Enter Start date of getting data from Revel API.
+        pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$"
+        examples:
+          - YYYY-MM-DDTh:m:s
+          - "2022-07-20T01:01:01"

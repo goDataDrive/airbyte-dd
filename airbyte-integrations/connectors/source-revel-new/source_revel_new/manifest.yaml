@@ -112,7 +112,6 @@ definitions:
           inject_into: "request_parameter"
 
   # ----- STREAMS ----
-
   # Address Stream 
   address_stream:
     $ref: "*ref(definitions.base_stream)"
@@ -122,6 +121,34 @@ definitions:
       primary_key: "uuid"
       # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
       path: "/Address" 
+
+# Customer Stream 
+  customer_stream:
+    $ref: "*ref(definitions.incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "customer"
+      primary_key: "uuid"
+      path: "/Customer" 
+
+
+  # Product Stream 
+  product_stream:
+    $ref: "*ref(definitions.incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "product"
+      primary_key: "uuid"
+      path: "/Product" 
+
+   # OrderItem Stream 
+  orderitem_stream:
+    $ref: "*ref(definitions.base_incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "orderitem"
+      primary_key: "uuid"
+      path: "/OrderItem" 
 
   # Order Stream 
   order_stream:
@@ -133,47 +160,21 @@ definitions:
       # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
       path: "/Order" 
 
-  # OrderItem Stream 
-  orderitem_stream:
-    $ref: "*ref(definitions.base_incremental_stream)"
-    $options:
-      pointer_name: "objects"
-      name: "orderitem"
-      primary_key: "uuid"
-      path: "/OrderItem" 
-
-  # Product Stream 
-  product_stream:
-    $ref: "*ref(definitions.incremental_stream)"
-    $options:
-      pointer_name: "objects"
-      name: "product"
-      primary_key: "uuid"
-      path: "/Product" 
-
-  # Customer Stream 
-  customer_stream:
-    $ref: "*ref(definitions.incremental_stream)"
-    $options:
-      pointer_name: "objects"
-      name: "customer"
-      primary_key: "uuid"
-      path: "/Customer" 
-
 streams:
   - "*ref(definitions.address_stream)" 
-  - "*ref(definitions.order_stream)"
-  - "*ref(definitions.orderitem_stream)"
   - "*ref(definitions.customer_stream)"
   - "*ref(definitions.product_stream)"
+  - "*ref(definitions.orderitem_stream)"
+  - "*ref(definitions.order_stream)"
 
 check:
   stream_names:
     - "address"
-    - "order"
     - "customer"
-    - "orderitem"
     - "product"
+    - "orderitem"
+    - "order"
+    
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
