@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "alias": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "building_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "city_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "country": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "county": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_by": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "district": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "door": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "id": {
+      "type": "integer"
+    },
+    "is_external": {
+      "type": "boolean"
+    },
+    "latitude": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "line_1": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "line_2": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "longitude": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "province": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "resource_uri": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "state": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "updated_by": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "updated_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "uuid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "zipcode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

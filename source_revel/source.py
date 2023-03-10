@@ -92,13 +92,13 @@ class RevelStream(HttpStream, ABC):
         yield {}
 
 
-class Customers(RevelStream):
+class Customer(RevelStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
 
     # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
-    primary_key = "customer_id"
+    primary_key = "id"
 
     def path(
         self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
@@ -139,7 +139,7 @@ class IncrementalRevelStream(RevelStream, ABC):
         return {}
 
 
-class Employees(IncrementalRevelStream):
+class Address(IncrementalRevelStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
@@ -148,7 +148,7 @@ class Employees(IncrementalRevelStream):
     cursor_field = "start_date"
 
     # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
-    primary_key = "employee_id"
+    primary_key = "id"
 
     def path(self, **kwargs) -> str:
         """
@@ -203,4 +203,4 @@ class SourceRevel(AbstractSource):
         """
         # TODO remove the authenticator if not required.
         auth = TokenAuthenticator(token="api_key")  # Oauth2Authenticator is also available if you need oauth support
-        return [Customers(authenticator=auth), Employees(authenticator=auth)]
+        return [Customer(authenticator=auth), Address(authenticator=auth)]
