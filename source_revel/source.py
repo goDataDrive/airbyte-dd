@@ -2,7 +2,6 @@
 # Copyright (c) 2022 Airbyte, Inc., all rights reserved.
 #
 
-
 from abc import ABC
 from typing import Any, Iterable, List, Mapping, MutableMapping, Optional, Tuple
 
@@ -56,7 +55,15 @@ class RevelStream(HttpStream, ABC):
     """
 
     # TODO: Fill in the url base. Required.
-    url_base = "https://example-api.com/v1/"
+    url_base = "https://savoypizza.revelup.com/resources/"
+
+    primary_key = "uuid"
+
+    def __init__(self, config: Mapping[str, Any], **kwargs):
+        super().__init__()
+        self.start_date = config['start_date']
+        self.api_key = config['api_key']
+        self._cursor_value = None
 
     def next_page_token(self, response: requests.Response) -> Optional[Mapping[str, Any]]:
         """
@@ -74,6 +81,8 @@ class RevelStream(HttpStream, ABC):
                 If there are no more pages in the result, return None.
         """
         return None
+    
+
 
     def request_params(
         self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, any] = None, next_page_token: Mapping[str, Any] = None
@@ -89,16 +98,23 @@ class RevelStream(HttpStream, ABC):
         TODO: Override this method to define how a response is parsed.
         :return an iterable containing each record in the response
         """
-        yield {}
+        return [response.json()]
 
 
-class Customer(RevelStream):
+    def request_headers(
+        self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
+    ) -> Mapping[str, Any]:
+        # The api requires that we include apikey as a header so we do that in this method
+        return {'api_key': self.api_key}
+
+
+class Address(RevelStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
 
     # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
-    primary_key = "id"
+    primary_key = "uuid"
 
     def path(
         self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
@@ -107,7 +123,7 @@ class Customer(RevelStream):
         TODO: Override this method to define the path this stream corresponds to. E.g. if the url is https://example-api.com/v1/customers then this
         should return "customers". Required.
         """
-        return "customers"
+        return "address"
 
 
 # Basic incremental stream
@@ -139,7 +155,7 @@ class IncrementalRevelStream(RevelStream, ABC):
         return {}
 
 
-class Address(IncrementalRevelStream):
+class Customer(IncrementalRevelStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
@@ -148,7 +164,7 @@ class Address(IncrementalRevelStream):
     cursor_field = "start_date"
 
     # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
-    primary_key = "id"
+    primary_key = "uuid"
 
     def path(self, **kwargs) -> str:
         """
@@ -193,6 +209,21 @@ class SourceRevel(AbstractSource):
         :param logger:  logger object
         :return Tuple[bool, any]: (True, None) if the input config can be used to connect to the API successfully, (False, error) otherwise.
         """
+        try:
+            # Create an ApiKeyAuthenticator using the provided API key
+            authenticator = ApiKeyAuthenticator(config["api_key"])
+
+            # Test the authentication by attempting to create an Apps stream
+            stream = Apps(authenticator=authenticator, config=config)
+            records = stream.read_records(sync_mode=SyncMode.full_refresh)
+            next(records)
+
+            # If everything works, return True and no error message
+            return True, None
+        except Exception as e:
+            # If there was an error, return False and the error message
+            return False, f"Connection check failed: {str(e)}"
+
         return True, None
 
     def streams(self, config: Mapping[str, Any]) -> List[Stream]:
@@ -202,5 +233,6 @@ class SourceRevel(AbstractSource):
         :param config: A Mapping of the user input configuration as defined in the connector spec.
         """
         # TODO remove the authenticator if not required.
-        auth = TokenAuthenticator(token="api_key")  # Oauth2Authenticator is also available if you need oauth support
-        return [Customer(authenticator=auth), Address(authenticator=auth)]
+        auth = ApiKeyAuthenticator(config["api_key"])  # Oauth2Authenticator is also available if you need oauth support
+        args = {"authenticator": authenticator, "config": config}
+        return [Address(authenticator=auth), Customer(authenticator=auth)]
