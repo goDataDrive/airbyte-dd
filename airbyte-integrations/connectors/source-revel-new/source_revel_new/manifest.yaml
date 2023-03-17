@@ -1,0 +1,201 @@
+version: "0.1.0"
+
+definitions:
+  schema_loader:
+      type: JsonFileSchemaLoader
+      file_path: "./source_revel_new/schemas/{{options['name'] }}.json"
+
+  #----- Selector ------
+  selector:
+    type: RecordSelector
+    extractor:
+      type: DpathExtractor
+      field_pointer: ["{{ options['pointer_name'] }}"]
+
+  #----- Requester ------
+  # Rquest component for configuring and describing how to connect to the API source
+  requester:
+    type: HttpRequester
+    name: "{{ options['name'] }}"
+    url_base: "https://savoypizza.revelup.com/resources/"
+    http_method: "GET"
+    authenticator:
+      type: ApiKeyAuthenticator
+      header: "API-Authentication"
+      api_token: "{{ config['api_key'] }}"
+    error_handler:
+      response_filters:
+          - http_codes: [ 401 ]
+            action: RETRY
+          - http_codes: [ 301 ]
+            action: RETRY
+            
+  #----- retriever ------
+  retriever:
+    type: SimpleRetriever
+    record_selector:
+      $ref: "*ref(definitions.selector)"
+    paginator:
+      type: "DefaultPaginator"
+      url_base: "*ref(definitions.requester.url_base)"
+      page_size_option:
+        inject_into: "request_parameter"
+        field_name: "limit"
+      pagination_strategy:
+        type: "OffsetIncrement"
+        page_size: 300
+      page_token_option:
+        field_name: "offset"
+        inject_into: "request_parameter"
+    requester:
+      $ref: "*ref(definitions.requester)"
+ 
+  # Base stream here!
+  base_stream:
+    #primary_key: "{{ options['primary_key'] }}"
+    type: DeclarativeStream
+    schema_loader:
+      $ref: "*ref(definitions.schema_loader)"
+    retriever:
+      $ref: "*ref(definitions.retriever)"
+
+  base_incremental_stream:
+    $ref: "*ref(definitions.base_stream)"
+    stream_cursor_field: "updated_date" 
+    retriever:
+      $ref: "*ref(definitions.retriever)"
+      requester: "*ref(definitions.requester)"
+
+      stream_slicer:
+        type: "DatetimeStreamSlicer"
+        start_datetime:
+          datetime:  "{{ config['start_date'] }}" #"2023-02-14T01:01:01"
+          datetime_format: "%Y-%m-%dT%H:%M:%S"
+        end_datetime:
+          datetime: "{{ now_utc() }}" # "{{now_utc().strftime('%Y-%m-%dT%H:%M:%S') }}"
+          datetime_format: "%Y-%m-%d %H:%M:%S.%f+00:00"
+        step: "P1D"
+        datetime_format: "%Y-%m-%dT%H:%M:%S"
+        cursor_granularity: "PT0.000001S"  # "PT1S", "PT0.000001S"
+        cursor_field: "updated_date"
+        start_time_option:
+          field_name: "updated_date__gt"
+          inject_into: "request_parameter"
+        end_time_option:
+          field_name: "updated_date__lte"
+          inject_into: "request_parameter"
+
+  incremental_stream:
+    $ref: "*ref(definitions.base_stream)"
+    stream_cursor_field: "updated_date" 
+    retriever:
+      $ref: "*ref(definitions.retriever)"
+      requester: "*ref(definitions.requester)"
+
+      stream_slicer:
+        type: "DatetimeStreamSlicer"
+        start_datetime:
+          datetime:  "{{ config['start_date'] + '.000000' }}" # "2023-01-03T21:29:36.755625"
+          datetime_format: "%Y-%m-%dT%H:%M:%S.%f"
+        end_datetime:
+          datetime: "{{ now_utc().strftime('%Y-%m-%dT%H:%M:%S.%f') }}" # "{{now_utc().strftime('%Y-%m-%dT%H:%M:%S') }}" 
+          datetime_format: "%Y-%m-%dT%H:%M:%S.%f"
+        step: "P1D"
+        datetime_format: "%Y-%m-%dT%H:%M:%S.%f"
+        cursor_granularity: "PT0.000001S"  # "PT1S", "PT0.000001S"
+        cursor_field: "updated_date"
+        start_time_option:
+          field_name: "updated_date__gt"
+          inject_into: "request_parameter"
+        end_time_option:
+          field_name: "updated_date__lte"
+          inject_into: "request_parameter"
+
+  # ----- STREAMS ----
+  # Address Stream 
+  address_stream:
+    $ref: "*ref(definitions.base_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "address"
+      primary_key: "uuid"
+      # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
+      path: "/Address" 
+
+# Customer Stream 
+  customer_stream:
+    $ref: "*ref(definitions.incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "customer"
+      primary_key: "uuid"
+      path: "/Customer" 
+
+
+  # Product Stream 
+  product_stream:
+    $ref: "*ref(definitions.incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "product"
+      primary_key: "uuid"
+      path: "/Product" 
+
+   # OrderItem Stream 
+  orderitem_stream:
+    $ref: "*ref(definitions.base_incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "orderitem"
+      primary_key: "uuid"
+      path: "/OrderItem" 
+
+  # Order Stream 
+  order_stream:
+    $ref: "*ref(definitions.base_incremental_stream)"
+    $options:
+      pointer_name: "objects"
+      name: "order"
+      primary_key: "uuid"
+      # Leaving this here to limit results for now until incremental working  ?created_date__gt=2023-02-01T19:58:25"
+      path: "/Order" 
+
+streams:
+  - "*ref(definitions.address_stream)" 
+  - "*ref(definitions.customer_stream)"
+  - "*ref(definitions.product_stream)"
+  - "*ref(definitions.orderitem_stream)"
+  - "*ref(definitions.order_stream)"
+
+check:
+  stream_names:
+    - "address"
+    - "customer"
+    - "product"
+    - "orderitem"
+    - "order"
+    
+
+# spec: 
+#   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
+#   connection_specification:
+#     $schema: http://json-schema.org/draft-07/schema#
+#     title: Ravel Source Spec
+#     type: object
+#     required:
+#       - api_key
+#       - start_date
+#     additionalProperties: true
+#     properties:
+#       api_key:
+#         type: string
+#         description: >-
+#           Enter Revel API Access Key.
+#         airbyte_secret: true
+#       start_date:
+#         type: string
+#         description: Enter Start date of getting data from Revel API.
+#         pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$"
+#         examples:
+#           - YYYY-MM-DDTh:m:s
+#           - "2022-07-20T01:01:01"

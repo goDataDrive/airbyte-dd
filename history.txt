@@ -1,0 +1,1032 @@
+    1  python3 main.py check  --config secrets/config.json
+    2  python3 main.py 
+    3   python main.py spec\n\n
+    4  python main.py check --config secrets/config.json\n\n
+    5  python main.py check --config secrets/config.json\n\n
+    6  cd datadrive/airbyte
+    7  ls
+    8  docker-compose up
+    9  ls
+   10  docker-compose up
+   11  exit
+   12  conda activate base
+   13  conda activate source-revel
+   14  python main.py check --config secrets/config.json\n\n
+   15  python main.py spec
+   16  python main.py spec
+   17  python main.py spec
+   18  python main.py check --config secrets/config.json\n\n
+   19  python main.py check --config secrets/config.json\n\n
+   20  git add .
+   21  git commit -m "add address stream"
+   22  git push
+   23  python main.py spec
+   24  python main.py check --config secrets/config.json\n\n
+   25  python main.py check --config secrets/config.json\n\n
+   26  python main.py check --config secrets/config.json\n\n
+   27  python main.py check --config secrets/config.json\n\n
+   28  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   29  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   30  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   31  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   32  conda activate base
+   33  conda activate base
+   34  conda activate source-revel
+   35  python main.py spec
+   36  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   37  python main.py spec
+   38  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   39  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   40  python main.py spec
+   41  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   42  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   43  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   44  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   45  conda deactivate
+   46  conda activate source-revel
+   47  python main.py spec
+   48  python3 main.py spec
+   49  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   50  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   51  conda activate base
+   52  conda activate source-revel
+   53  conda installl -r requirements.txt
+   54  conda install -r requirements.txt
+   55  pip install -r requirements.txt
+   56  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   57  ls
+   58  cd source-revel
+   59  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   60  git pull origin
+   61  git status
+   62  git status
+   63  git push
+   64  git add .
+   65  git push
+   66  git commit -m "modify order, address"
+   67  git push
+   68  git pull
+   69  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   70  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   71  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   72  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+   73  conda deactivate
+   74  ls
+   75  cd ../..
+   76  ls
+   77  cd ..
+   78  ls
+   79  cd airbyte-integrations/connector-templates/generator
+   80  ls
+   81  ./generate.sh
+   82  cd ../../
+   83  ls
+   84  cd connector
+   85  cd connectors
+   86  ls
+   87  cd source-ravel
+   88  ls
+   89  conda create -n source-ravel
+   90  conda activate source-ravel
+   91  pip3
+   92  pip3 install -r requirements.txt
+   93  ls
+   94  code
+   95  code .
+   96  ls
+   97  git init
+   98  git branch -M main
+   99  git add .
+  100  git commit -n "inital commit with codes generated"
+  101  git remote add origin https://github.com/ayockj/source-revel-main.git
+  102  git push -u origin main
+  103  git push -u origin main~
+  104  git push -u origin main
+  105  pwd
+  106  ls
+  107  python main.py spec
+  108  python3 main.py spec
+  109  conda deactivate
+  110  conda activate source-ravel
+  111  python3 main.py spec
+  112  python main.py spec\n\n
+  113  python3 main.py spec\n\n
+  114  python3 main.py spec\n\n
+  115  pwd
+  116  ls
+  117  ls
+  118  cp source_ravel/spec.yml .
+  119  ls
+  120  python3 main.py spec
+  121  python3 main.py spec
+  122  python3 main.py spec
+  123  python3 main.py spec
+  124  python main.py spec
+  125  python3 main.py spec
+  126  pip3 install -r requirements.txt
+  127  python3 main.py spec
+  128  python3 main.py check --config secrets/config.json
+  129  python3 main.py check --config secrets/config.json
+  130  python3 main.py check --config secrets/config.json
+  131  python3 main.py check --config secrets/config.json
+  132  python3 main.py spec
+  133  python3 main.py spec
+  134  python3 main.py spec
+  135  python3 main.py spec
+  136  python3 main.py spec
+  137  python3 main.py spec
+  138  python3 main.py spec
+  139  python3 main.py spec
+  140  python3 main.py spec
+  141  python3 main.py spec
+  142  python3 main.py check --config secrets/config.json
+  143  python3 main.py check --config secrets/config.json
+  144  python3 main.py check --config secrets/config.json
+  145  git add .
+  146  git commit -m "adopted new approach of immplementation"
+  147  git push
+  148  git push --set-upstream origin main
+  149  git push 
+  150  git pull origin
+  151  python3 main.py check --config secrets/config.json
+  152  python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  153  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  154  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  155  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  156  git add .
+  157  git commit -m " modify configured catalog for only address stream"
+  158  git push
+  159  git checkout -M order
+  160  git branch -b  order
+  161  git status'\n
+  162  git status
+  163  python3 main.py check --config secrets/config.json
+  164  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  165  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  166  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  167  git add .
+  168  git commit -m " add the order stream to the address"
+  169  git push 
+  170  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  171  ls
+  172  cd datadrive
+  173  ls
+  174  git clone https://github.com/airbytehq/airbyte.git
+  175  git clone https://github.com/airbytehq/airbyte.git airbyte
+  176  git clone https://github.com/airbytehq/airbyte.git mkdir air && cd air
+  177  mkdir air && cd air
+  178  git clone https://github.com/airbytehq/airbyte.git 
+  179  git clone https://github.com/airbytehq/airbyte.git 
+  180  git clone https://github.com/airbytehq/airbyte.git 
+  181  git clone https://github.com/airbytehq/airbyte.git 
+  182  git clone https://github.com/airbytehq/airbyte.git 
+  183  ls
+  184  conda activate base
+  185  conda activate source-ravel
+  186  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  187  pwd
+  188  ls
+  189  cd source-ravel
+  190  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  191  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  192  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  193  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  194  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  195  ls
+  196  cd ..
+  197  ls
+  198  cp -r source-ravel ../source-ravel-bak
+  199  cd source-ravel
+  200  ls
+  201  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  202  ls
+  203  mkdir git-course
+  204  cd git-course
+  205  ls
+  206  git --version
+  207  git config --global core.editor "code --wait"
+  208  code
+  209  git config --global core.editor "code"
+  210   history
+  211  ls
+  212  mkdir moon && cd moon
+  213  git init
+  214  ls
+  215  ls -al
+  216  open git
+  217  open .git
+  218  ls
+  219  conda activate source-ravel
+  220  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  221  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  222  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  223  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  224  pwd
+  225  cd ..
+  226  ls
+  227  cp -r source-ravel source-ravel-try
+  228  cd source-ravel-try
+  229  ls
+  230  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  231  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  232  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  233  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  234  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  235  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  236  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  237  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  238  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  239  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  240  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  241  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  242  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  243  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  244  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  245  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  246  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  247  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  248  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  249  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  250  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  251  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  252  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  253  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  254  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  255  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  256  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  257  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  258  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  259  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  260  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  261  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  262  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  263  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  264  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  265  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  266  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  267  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  268  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  269  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  270  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  271  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  272  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  273  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  274  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  275  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  276  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  277  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  278  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  279  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  280  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  281  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  282  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  283  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  284  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  285  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  286  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  287  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  288  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  289  docker build . -t airbyte/source-ravel:dev\n
+  290  docker build . -t airbyte/source-ravel:dev\n
+  291  python -m pytest integration_tests -p integration_tests.acceptance
+  292  python3 -m pytest integration_tests -p integration_tests.acceptance
+  293  pwd
+  294  cd ../../
+  295  ls
+  296  cd bases
+  297  ls
+  298  cd source-acceptance-test
+  299  ls
+  300  cd source_acceptance_test
+  301  ls
+  302  cd tests/
+  303  ls
+  304  cat test_full_refresh.py
+  305  pwd
+  306  cd ../.././
+  307  pwd
+  308  cd ../../../
+  309  ls
+  310  cd airbyte-integrations/connectors
+  311  ls
+  312  cd source-ravel
+  313  ls
+  314  cd ..
+  315  cp -r source-ravel source-ravel-ok24
+  316  cd source-ravel
+  317  python3 -m pytest integration_tests -p integration_tests.acceptance
+  318  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  319  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  320  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  321  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  322  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  323  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  324  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  325  git add .
+  326  git commit -m "added files and modified files"
+  327  git push origin/main
+  328  git push 
+  329  git pull
+  330  git config pull.rebase false
+  331  git config pull.rebase true
+  332  git config pull.ff only
+  333  git pull
+  334  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  335  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  336  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  337  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  338  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  339  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  340  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  341  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  342  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  343  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  344  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  345  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  346  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  347  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  348  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  349  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  350  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  351  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  352  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  353  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  354  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  355  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  356  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  357  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  358  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  359  pwd
+  360  cp -r source_ravel source-ravel-before-address-split
+  361  ls
+  362  cd ../source-ravel
+  363  ls
+  364  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  365  cd ../source-ravel-ok24
+  366  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  367  cd ../source-ravel-try
+  368  pws
+  369  clear
+  370  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  371  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  372  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  373  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  374  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  375  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  376  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  377  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  378  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  379  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  380  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  381  docker build . -t airbyte/source-revel:dev
+  382  docker push docayock/airbyte-revel-source:dev
+  383  docker push  airbyte/source-revel:dev
+  384  docker tag airbyte/source-revel:dev docayock/airbyte-revel-source:dev 
+  385  docker push docayock/airbyte-revel-source:dev
+  386  docker login --docayock --email=ayockishaya1029@gmail.com
+  387  docker login --docayock --email=ayockishaya1029@gmail.com
+  388  docker images
+  389  docker login --username=docayock --email=ayockishaya1029@gmail.com
+  390  docker login
+  391  docker login
+  392  docker login
+  393  docker login
+  394  docker login
+  395  docker push docayock/airbyte-revel-source:dev
+  396  python main.py spec
+  397  python3 main.py spec
+  398  python3 main.py check --config secrets/config.json\n
+  399  dovker images
+  400  docker images
+  401  docker push airbyte/source-revel:dev
+  402  docker push airbyte/source-revel
+  403  docker push airbyte/source-revel:latest
+  404  docker run --rm -i airbyte/source-revel spec
+  405  docker run --rm -i airbyte/source-revel  spec
+  406  docker run --rm -i docayock/airbyte-revel-source  spec
+  407  docker run --rm -i docayock/airbyte-revel-source:dev  spec
+  408  docker run --rm -i docayock/airbyte-revel-source:dev  check --config secrets/config.json
+  409  docker build . -t airbyte/source-revel:latest
+  410  docker tag airbyte/source-revel:dev docayock/airbyte-revel-source:latext
+  411  docker images
+  412  docker images
+  413  docker tag airbyte/source-revel:latest airbyte/source-revel:latest
+  414  docker push airbyte/source-revel:latest
+  415  docker login
+  416  docker push airbyte/source-revel:latest
+  417  docker login
+  418  docker push airbyte/source-revel:latest
+  419  docker tag airbyte/source-revel:latest docayock/\nsource-revel-address:latest
+  420  docker tag airbyte/source-revel:latest docayock/source-revel-address:latest
+  421  docker push docayock/source-revel-address:latest
+  422  docker tag airbyte/source-revel:latest docayock/source-revel-address:latest
+  423  docker push docayock/source-revel-address:latest
+  424  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  425  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  426  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  427  docker build . -t airbyte/source-revel:latest
+  428  docker tag airbyte/source-revel:latest docayock/source-revel-address:latest
+  429  docker push docayock/source-revel-address:latest
+  430  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  431  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  432  docker build . -t airbyte/source-revel:latest
+  433  docker tag airbyte/source-revel:latest docayock/source-revel-add:latest
+  434  docker push docayock/source-revel-add:latest
+  435  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  436  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  437  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  438  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  439  docker build . -t airbyte/source-revel:latest
+  440  docker build . -t airbyte/source-revel-address:latest
+  441  docker tag airbyte/source-revel-address:latest docayock/source-revel-add:latest
+  442  docker push docayock/source-revel-add:latest
+  443  docker push docayock/source-revel-add:latest
+  444  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  445  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  446  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  447  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  448  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  449  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  450  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  451  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  452  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  453  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  454  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  455  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  456  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  457  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  458  conda activate base
+  459  conda activate base
+  460  pwd
+  461  ls
+  462  cd source-ravel-try
+  463  pwd
+  464  ls
+  465  conda activate source-ravel
+  466  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  467  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  468  docker build . -t airbyte/source-revel-order:latest
+  469  docker build . -t airbyte/source-revel-order:latest
+  470  docker tag airbyte/source-revel-order:latest docayock/source-revel-order:latest
+  471  docker push docayock/source-revel-order:latest
+  472  conda activate base
+  473  conda activate base
+  474  conda activate base
+  475  pwd
+  476  ls
+  477  conda activate source_ravel
+  478  conda activate source_revel
+  479  conda info --envs
+  480  conda activate source-ravel
+  481  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  482  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  483  docker build . -t airbyte/source-revel-order:latest
+  484  docker build . -t airbyte/source-revel-order:latest
+  485  docker tag airbyte/source-revel-order:latest docayock/source-revel-order:latest
+  486  docker tag airbyte/source-revel-order:latest docayock/source-revel-orders:latest
+  487  docker push docayock/source-revel-orders:latest
+  488  docker build . -t airbyte/source-revel-orders:latest
+  489  docker tag airbyte/source-revel-orders:latest docayock/source-revel-orderss:latest
+  490  docker push docayock/source-revel-orderss:latest
+  491  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  492  docker build . -t airbyte/source-revel-orders:latest
+  493  docker tag airbyte/source-revel-orders:latest docayock/source-revel-orderss:latest
+  494  docker push docayock/source-revel-orderss:latest
+  495  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  496  docker build . -t airbyte/source-revel-orders:latest
+  497  docker tag airbyte/source-revel-orders:latest docayock/source-revel-orderss:latest
+  498  docker push docayock/source-revel-orderss:latest
+  499  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  500  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  501  docker build . -t airbyte/source-revel-orders:latest
+  502  docker tag airbyte/source-revel-orders:latest docayock/source-revel-orderss:latest
+  503  docker push docayock/source-revel-orderss:latest
+  504  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  505  docker build . -t airbyte/source-revel-orders:latest
+  506  docker tag airbyte/source-revel-orders:latest docayock/source-revel-orderss:latest
+  507  docker push docayock/source-revel-orderss:latest
+  508  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  509  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  510  pwd
+  511  ls
+  512  conda deactivate
+  513  conda activate
+  514  conda activate source-ravel
+  515  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  516  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  517  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  518  git remote add origin https://github.com/goDataDrive/airbyte-dd.git
+  519  git add .
+  520  git commit -m " add files"
+  521  git push 
+  522  pwd
+  523  cd datadrive
+  524  ls
+  525  mkdir air
+  526  mkdir airs
+  527  cd airs
+  528  ls
+  529  git clone https://github.com/airbytehq/airbyte.git
+  530  git clone https://github.com/airbytehq/airbyte.git
+  531  ls
+  532  pwd
+  533  ls
+  534  ccd airbyte
+  535  cd airbyte
+  536  ls
+  537  cd airbyte-integrations
+  538  ls
+  539  cd connectors
+  540  ls
+  541  docker-compose up
+  542  ls
+  543  ls
+  544  cd ..
+  545  ls
+  546  cd ..
+  547  ls
+  548  docker-compose up
+  549  pwd
+  550  cd ..
+  551  ls
+  552  ls
+  553  cp airbyte ~/datadrive/
+  554  cp airbyte -r ~/datadrive/
+  555  cp airbyte -r ~/datadrive/airbyte
+  556  cp airbyte  ~/datadrive/airbyte
+  557  cp -r airbyte  ~/datadrive/airbyte
+  558  ls 
+  559  cd ..
+  560  ls
+  561  cd airbyte
+  562  ls
+  563  docker-compose down
+  564  ls
+  565  docker-compose up
+  566  docker-compose down
+  567  docker-compose down
+  568  docker-compose up
+  569  docker-compose down
+  570  pwd
+  571  cd source-ravel-try
+  572  conda activate source-ravel
+  573  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  574  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  575  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  576  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  577  pwd
+  578  ls
+  579  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  580  conda activate source_ravel
+  581  conda activate source-ravel
+  582  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  583  cd airbyte-integrations/connector-templates/generator\n./generate.sh
+  584  conda deactivate
+  585  cd airbyte-integrations/connector-templates/generator\n./generate.sh
+  586  cd airbyte-integrations/connector-templates/
+  587  cd ~/airbyte/airbyte-integrations/connector-templates/generator\n./generate.sh
+  588  cd ~/datadrive/airbyte/airbyte-integrations/connector-templates/generator\n./generate.sh
+  589  cd ~/datadrive/airbyte/airbyte-integrations/connector-templates/generator\n./generate.sh
+  590  cd /Users/jeremiah/datadrive/airbyte/airbyte-integrations/connectors/source-revel/source_revel
+  591  pwd
+  592  cd ..
+  593  ls
+  594  cd airbyte-integrations/connector-templates/generator\n./generate.sh
+  595  cd ~/datadrive/airbyte/airbyte-integrations/connector-templates/generator\n./generate.sh
+  596  cd ~/datadrive/airbyte/airbyte-integrations/connector-templates/generator\n./generate.sh
+  597  cd ../../connectors/source-revel
+  598  ls
+  599  conda activate sour-revel
+  600  conda activate source-revel
+  601  conda install -r requirements.txt
+  602  conda install  requirements.txt
+  603  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  604  pwd
+  605  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  606  pwd
+  607  git remote add origin https://github.com/goDataDrive/airbyte-dd
+  608  git remote add master https://github.com/goDataDrive/airbyte-dd
+  609  pwd
+  610  ls
+  611  touch .gitignore
+  612  pwd
+  613  ls
+  614  ls -al
+  615  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  616  ls
+  617  cd 
+  618  ls
+  619  cd datadrive/airbyte/airbyte/airbyte-integrations/connectors/
+  620  ls
+  621  ls
+  622  cd ..
+  623  ls
+  624  cd ..
+  625  ls
+  626  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  627  cd /Users/jeremiah/datadrive/airbyte/airbyte-integrations/connectors/source-revel
+  628  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  629  docker build . -t airbyte/source-revel:dev\n
+  630  docker image tag airbyte/source-revel:dev docayock/source-revel:latest
+  631  docker image push docayock/source-revel:latest
+  632  pwd
+  633  cd datadrive
+  634  ls
+  635  cd airbyte
+  636  ls
+  637  docker-compose up
+  638  cd datadrive/airbyte/
+  639  ls
+  640  cd ..
+  641  ls
+  642  cd airbyte
+  643  ls 
+  644  docker-compose down
+  645  docker-compose up
+  646  ls
+  647  conda activate source-revel
+  648  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  649  docker build . -t airbyte/source-revel:dev\n
+  650  docker image tag airbyte/source-revel:dev docayock/source-revel:latest
+  651  docker image push docayock/source-revel:latest
+  652  docker image tag airbyte/source-revel:dev docayock/source-revel:latest2
+  653  docker image push docayock/source-revel:latest2
+  654  docker image tag airbyte/source-revel:dev docayock/revelsource:latest
+  655  docker image push docayock/revelsource:latest
+  656  pwd
+  657  ls
+  658  conda activate source-revel
+  659  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  660  pwd
+  661  ls
+  662  pwd
+  663  conda deactivate
+  664  exit
+  665  exit
+  666  cd datadrive/airbyte
+  667  ls
+  668  docker-compose down
+  669  docker-compose up
+  670  pwd
+  671  cd ..
+  672  ls
+  673  cdpwd
+  674  pwd
+  675  pwd
+  676  ls
+  677  cd airbyte
+  678  pwd
+  679  ls
+  680  cd ..
+  681  ls
+  682  cd air
+  683  ls
+  684  git clone https://github.com/goDataDrive/airbyte-dd.git
+  685  git clone https://github.com/goDataDrive/airbyte-dd.git
+  686  ls
+  687  git clone https://github.com/goDataDrive/airbyte-dd.git
+  688  git clone https://github.com/goDataDrive/airbyte-dd.git
+  689  rm  -r airbyte-dd
+  690  git clone https://github.com/goDataDrive/airbyte-dd.git
+  691  git clone -c https://github.com/goDataDrive/airbyte-dd.git
+  692  git clone https://github.com/goDataDrive/airbyte-dd.git
+  693  git clone https://github.com/goDataDrive/airbyte-dd.git airbyte
+  694  ls
+  695  cp airbyte airbyte-dd
+  696  rm -r  airbyte-dd
+  697  rm -r airbyte-dd
+  698  rm  airbyte-dd
+  699  ls -al
+  700  mv airbyte-dd airbyte-ddd
+  701  mv airbyte-dd
+  702  ls
+  703  mv airbyte airbyte-dd
+  704  ls
+  705  cp /Users/jeremiah/datadrive/airbyte/airbyte-integrations/connectors/source-revel .
+  706  cp -r /Users/jeremiah/datadrive/airbyte/airbyte-integrations/connectors/source-revel .
+  707  ls
+  708  cp -r source-reve /Users/jeremiah/datadrive/airbyte/airbyte-integrations/connectors/source-revel
+  709  ls
+  710  pwd
+  711  cd airbyte-dd
+  712  ls
+  713  cd airbyte-integrations/connectors/
+  714  ls
+  715  ¬
+  716  pwd
+  717  cp -r source-reve /Users/jeremiah/datadrive/air/airbyte-dd/airbyte-integrations/connectors/source-revel
+  718  cp -r source-revel /Users/jeremiah/datadrive/air/airbyte-dd/airbyte-integrations/connectors/source-revel
+  719  cp -r /Users/jeremiah/datadrive/air/source-revel /Users/jeremiah/datadrive/air/airbyte-dd/airbyte-integrations/connectors/source-revel
+  720  ls
+  721  ls
+  722  cd ../..
+  723  ls
+  724  cd 
+  725  cd ..
+  726  cd ..
+  727  ls
+  728  cd Users
+  729  ls
+  730  cd jeremiah
+  731  ls
+  732  cd datadrive
+  733  ls
+  734  ls
+  735  rm -r airbyte
+  736  ls
+  737  ls
+  738  cd airs
+  739  ls
+  740  cd ..
+  741  ls
+  742  cd air
+  743  ls
+  744  cd ..
+  745  ls
+  746  cd air/
+  747  ls
+  748  rm -r airbyte-ddd
+  749  rm -r--r--r  airbyte-ddd
+  750  rm -r--r--r airbyte-ddd
+  751  ls
+  752  cd airbyte-dd
+  753  ls
+  754  docker-compose up
+  755  docker-compose up
+  756  ls
+  757  cd ..
+  758  ls
+  759  zip airbyte-dd
+  760  ls
+  761  cp -r airbyte-dd ../../Documents
+  762  ls
+  763  cd airbyte-dd
+  764  ls
+  765  docker compose up
+  766  ls
+  767  cd ../..
+  768  ls
+  769  ls
+  770  cd postgres-pg
+  771  ls
+  772  cd compose-postgres
+  773  ls
+  774  docker-compose down
+  775  cd ../..
+  776  ls
+  777  cd air/source-dd
+  778  ls
+  779  cd air
+  780  ls
+  781  cd airbyte-dd
+  782  ls
+  783  docker compose down
+  784  ls
+  785  cd ..
+  786  ls
+  787  cd ..
+  788  ls
+  789  cm airbyte /Users/jeremiah/Desktop
+  790  mv airbyte /Users/jeremiah/Desktop
+  791  ls
+  792  mv airs /Users/jeremiah/Desktop
+  793  ls
+  794  conda activate base
+  795  git push
+  796  git push --set-upstream origin revel-source
+  797  git add .
+  798  git push
+  799  git git pull
+  800  pwd
+  801  conda activate base
+  802  conda activate source-revel
+  803  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  804  cd /Users/jeremiah/datadrive/airbyte-dd/airbyte-integrations/connectors/source-revel/source_revel
+  805  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  806  ls
+  807  cd ..
+  808  ls
+  809  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  810  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  811  ls
+  812  cd ~
+  813  ls
+  814  cd datadrive
+  815  ls
+  816  cd air
+  817  ls
+  818  cd ..
+  819  ls
+  820  git clone https://github.com/goDataDrive/airbyte-dd.git
+  821  ls
+  822  cd airbyte-dd/airbyte-integrations/connectors/ls
+  823  ls
+  824  cd airbyte-dd/airbyte-integrations/connectors
+  825  ls
+  826  pwd
+  827  cd ../..
+  828  ls
+  829  cd ..
+  830  ls
+  831  cp -r air/source-revel /Users/jeremiah/datadrive/airbyte-dd/airbyte-integrations/connectors 
+  832  ls
+  833  cd airbyte-dd
+  834  ls
+  835  docker compose up
+  836  docker compose up
+  837  pwd
+  838  cd datadrive
+  839  ls
+  840  mkdir postgrespg-docker
+  841  cd postgrespg-docker
+  842  touch docker-compose.yml
+  843  ls
+  844  vi docker-compose.yml
+  845  vi docker-compose.yml
+  846  docker compose up -d
+  847  pwd
+  848  cd datadrive
+  849  cd postgrespg-docker
+  850  ls
+  851  docker compose up -d
+  852  ls
+  853  cat docker-compose.yml
+  854  ls
+  855  cat docker-compose.yml
+  856  pwd
+  857  cd ..
+  858  ls
+  859  docker pull airbyte/destination-snowflakedocker pull airbyte/destination-snowflake
+  860  docker pull airbyte/destination-snowflake
+  861  ls
+  862  cd postgres
+  863  cd postgres-pg
+  864  ls
+  865  cd compose-postgres
+  866  ls
+  867  cd ..
+  868  ls
+  869  cd ..
+  870  ls
+  871  cd postgrespg-docker
+  872  ls
+  873  ls -al
+  874  ls
+  875  cd datadrive
+  876  ls
+  877  cd air
+  878  ls
+  879  cd airbyte-ddd
+  880  ls
+  881  ls
+  882  ls
+  883  cd ..
+  884  ls
+  885  rm -r airbyte-ddd
+  886  cd ..
+  887  ls
+  888  cd airbyte-dd
+  889  ls
+  890  git config core.longpaths true
+  891  git reset --hard HEAD
+  892  docker ps
+  893  docker ps
+  894  ls
+  895  docker ps
+  896  docker compose down -v
+  897  docker compose up
+  898  pwd
+  899  ls
+  900  conda activate source-revel
+  901  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  902  docker build . -t airbyte/source-revel:latest
+  903  docker tag  airbyte/source-revel:latest docayock/source-revel:latest
+  904  docker push  docayock/source-revel:latest
+  905  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  906  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  907  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  908  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  909  PWD
+  910  LS
+  911  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  912  git fetch origin
+  913  git checkout revel-source
+  914  git status
+  915  git merge 895e0dcaff4979f0906304de26322eda7b00f7e6
+  916  docker build . -t airbyte/source-revel 
+  917  docker tag airbyte/source-revel dockayock/source:1.0.1ff
+  918  docker build . -t airbyte/source-revel:1.0.1 
+  919  docker tag airbyte/source-revel:1.0.1 dockayock/source:1.0.1
+  920  docker image push docayock/source-revel:1.0.1
+  921  docker tag airbyte/source-revel:1.0.1 dockayock/source-revel:1.0.1
+  922  docker image push docayock/source-revel:1.0.1
+  923  docker  push docayock/source-revel:1.0.1
+  924  docker tag airbyte/source-revel:1.0.1 docayock/source-revel:1.0.1
+  925  docker image push docayock/source-revel:1.0.1
+  926  git -C "/Users/jeremiah/datadrive/airbyte-dd" -c "core.editor=code --wait --reuse-window" cherry-pick 895e0dcaff4979f0906304de26322eda7b00f7e6
+  927  conda activate base
+  928  git cherry-pick --skip
+  929  conda activate source-revel
+  930  git fetch 895e0dcaff
+  931  git -C "/Users/jeremiah/datadrive/airbyte-dd" -c "core.editor=code --wait --reuse-window" merge --ff-only origin/revel-source
+  932  git merge 895e0dcaff4979f0906304de26322eda7b00f7e6
+  933  git merge 895e0dcaff4979f0906304de26322eda7b00f7e6
+  934  git fetch 895e0dcaff4979f0906304de26322eda7b00f7e6
+  935  git fetch 895e0dcaff
+  936  git merge 895e0dcaff4979f0906304de26322eda7b00f7e6
+  937  git branch
+  938  ls ./.git/refs/heads/
+  939  git branch -r
+  940  git pull
+  941  git fetch https://github.com/goDataDrive/airbyte-dd/commit/895e0dcaff4979f0906304de26322eda7b00f7e6
+  942  git fetch https://github.com/goDataDrive/airbyte-dd/
+  943  git pull
+  944  git fetch https://github.com/goDataDrive/airbyte-dd source-revel
+  945  git fetch https://github.com/goDataDrive/airbyte-dd revel-source
+  946  git checkout revel-source
+  947  git merge
+  948  git merge revel-source
+  949  ped
+  950  pwd
+  951  ls
+  952  ls
+  953  ls
+  954  cd airbyte-integrations/connectors/source-revel
+  955  cd /Users/jeremiah/datadrive/airbyte-dd/airbyte-integrations/connectors/source-revel-new/
+  956  ls
+  957  conda deactivate
+  958  conda create -n source-revel-new
+  959  conda activate source-revel-new
+  960  pip3 install -r requirements.txt
+  961  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  962  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  963  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  964  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  965  git add .
+  966  git commit -m "modified revel source using new updates and configured wellKnownTypes"
+  967  git push
+  968  git push --set--upstream origin revel-source-new
+  969  git push
+  970  git push --set-upstream origin revel-source-new
+  971  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  972  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  973  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  974  docker build . -t airbyte/source-revel-new
+  975  docker image tag airbyte/source-revel-new docayock/source-revel-new:1.0.0
+  976  docker image push  docayock/source-revel-new:1.0.0
+  977  conda activate source-revel-new
+  978  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+  979  ls
+  980  cd datadrive
+  981  ls
+  982  cd airbyte-dd
+  983  ls
+  984  docker compose up -u
+  985  docker compose down -u
+  986  docker compose down -v
+  987  docker compose down -v
+  988  docker compose up -d
+  989  docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/9/2 --network host ...docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/9/2 --network host ...
+  990  docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/9/2 --network host ...docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/9/2 --network host
+  991  docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/9/2 --network host
+  992  docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/9/2 --network host
+  993  docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/1/1 --network host
+  994  docker run --rm -i -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -w /data/1/1 --network host
+  995  docker run -it --rm --volume airbyte_workspace:/data busybox ls /data/1/1/
+  996  pwd
+  997  docker run -it --rm --volume airbyte_workspace:/data busybox ls /data/1/1/
+  998  docker compose down -v
+  999  shutdown
+ 1000  sudo shutdown
+ 1001  conda activate source-revel-new
+ 1002  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1003  pwd
+ 1004  cd /Users/jeremiah/datadrive/airbyte-dd/airbyte-integrations/connectors/source-revel-new/source_revel_new
+ 1005  ls
+ 1006  cd ..
+ 1007  ls
+ 1008  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1009  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1010  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1011  docker build . -t airbyte/source-revel
+ 1012  docker image tag airbyte/source-revel docayock/source-revel:0.0.0
+ 1013  docker image push docayock/source-revel:0.0.0
+ 1014  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1015  docker image push docayock/source-revel:0.0.1
+ 1016  docker build . -t airbyte/source-revel
+ 1017  docker image tag airbyte/source-revel docayock/source-revel:0.0.1
+ 1018  docker image push docayock/source-revel:0.0.1
+ 1019  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1020  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1021  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1022  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1023  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1024  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1025  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1026  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1027  conda activate base
+ 1028  conda activate source-revel-new
+ 1029  ls
+ 1030  python3 main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json
+ 1031  history
+ 1032  history 0
