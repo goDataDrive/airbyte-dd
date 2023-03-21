@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Airbyte, Inc., all rights reserved.
+ * Copyright (c) 2023 Airbyte, Inc., all rights reserved.
  */
 
 package io.airbyte.integrations.source.postgres;
@@ -591,6 +591,7 @@ public class PostgresSourceOperations extends AbstractJdbcCompatibleSourceOperat
   }
 
   private static class ColumnInfo {
+
     public String columnTypeName;
     public PostgresType columnType;
 
