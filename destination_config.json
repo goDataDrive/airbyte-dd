@@ -1,1 +1,13 @@
-{"host":"nr68293.us-east-2.aws.snowflakecomputing.com","role":"DEV_JEREMIAH_MODIFY","schema":"AIRBYTE_SCHEMA","database":"DEV_JEREMIAH","username":"JEREMIAH","warehouse":"DEV_WH","credentials":{"password":"Jeremiah1029@","auth_type":"Username and Password"},"loading_method":{"method":"Internal Staging"}}
+{
+  "host": "nr68293.us-east-2.aws.snowflakecomputing.com",
+  "role": "DEV_JEREMIAH_MODIFY",
+  "schema": "AIRBYTE_SCHEMA",
+  "database": "DEV_JEREMIAH",
+  "username": "JEREMIAH",
+  "warehouse": "DEV_WH",
+  "credentials": {
+    "password": "Jeremiah1029@",
+    "auth_type": "Username and Password"
+  },
+  "loading_method": { "method": "Internal Staging" }
+}
