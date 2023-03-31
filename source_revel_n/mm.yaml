@@ -1,0 +1,1295 @@
+version: 0.30.1
+type: DeclarativeSource
+check:
+  type: CheckStream
+  stream_names:
+    - address
+streams:
+  - type: DeclarativeStream
+    name: address
+    primary_key:
+      - uuid
+    schema_loader:
+      type: JsonFileSchemaLoader
+      file_path: "./source_revel_new/schemas/address.json"
+      type: object
+    retriever:
+      type: SimpleRetriever
+      requester:
+        type: HttpRequester
+        url_base: https://savoypizza.revelup.com/resources/
+        path: /Address
+        http_method: GET
+        request_parameters: {}
+        request_headers: {}
+        request_body_json: {}
+        authenticator:
+          type: ApiKeyAuthenticator
+          header: API-Authentication
+          api_token: '{{ config["api_key"] }}'
+      record_selector:
+        type: RecordSelector
+        extractor:
+          type: DpathExtractor
+          field_path:
+            - objects
+      paginator:
+        type: DefaultPaginator
+        page_token_option:
+          type: RequestOption
+          inject_into: request_parameter
+          field_name: offset
+        page_size_option:
+          type: RequestOption
+          field_name: limit
+          inject_into: request_parameter
+        pagination_strategy:
+          type: OffsetIncrement
+          page_size: 300 
+
+  - type: DeclarativeStream
+    name: order
+    primary_key:
+      - uuid
+    schema_loader:
+      type: JsonFileSchemaLoader
+      file_path: "./source_revel_new/schemas/order.json"
+      schema:
+        $schema: http://json-schema.org/schema#
+        type: object
+    retriever:
+      type: SimpleRetriever
+      requester:
+        type: HttpRequester
+        url_base: https://savoypizza.revelup.com/resources/
+        path: /Order
+        http_method: GET
+        request_parameters: {}
+        request_headers: {}
+        request_body_json: {}
+        authenticator:
+          type: ApiKeyAuthenticator
+          header: API-Authentication
+          api_token: f940498d72934fe89f7e7732a49582cd:6dbeded37256473cb99d9588f44effb8942c1813a52f4c3d959ed274d2e45e3d #'{{ config["api_key"] }}'
+      record_selector:
+        type: RecordSelector
+        extractor:
+          type: DpathExtractor
+          field_path:
+            - objects
+      paginator:
+        type: DefaultPaginator
+        page_token_option:
+          type: RequestOption
+          inject_into: request_parameter
+          field_name: offset
+        page_size_option:
+          type: RequestOption
+          field_name: limit
+          inject_into: request_parameter
+        pagination_strategy:
+          type: OffsetIncrement
+          page_size: 300
+    incremental_sync:
+      step: P1D
+      type: DatetimeBasedCursor
+      cursor_field: updated_date
+      start_datetime: '2022-07-20T01:01:01'
+      datetime_format: '%Y-%m-%dT%H:%M:%S'
+      end_time_option:
+        type: RequestOption
+        field_name: updated_date__lte
+        inject_into: request_parameter
+      start_time_option:
+        type: RequestOption
+        field_name: updated_date__gt
+        inject_into: request_parameter
+      cursor_granularity: PT0.000001S
+      end_datetime: '2022-07-23T01:01:01'
+  # - type: DeclarativeStream
+  #   name: customer
+  #   primary_key:
+  #     - uuid
+  #   schema_loader:
+  #     type: InlineSchemaLoader
+  #     schema:
+  #       $schema: http://json-schema.org/schema#
+  #       properties:
+  #         accept_checks:
+  #           type: boolean
+  #         account_balance:
+  #           type: 'null'
+  #         account_limit:
+  #           type: 'null'
+  #         active:
+  #           type: boolean
+  #         address:
+  #           type: string
+  #         addresses:
+  #           items:
+  #             properties:
+  #               active:
+  #                 type: boolean
+  #               address_type:
+  #                 type: 'null'
+  #               city:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               company_name:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               country:
+  #                 type: string
+  #               created_date:
+  #                 type: string
+  #               customer:
+  #                 type: string
+  #               delivery_instructions:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               email:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               id:
+  #                 type: integer
+  #               latitude:
+  #                 type: number
+  #               longitude:
+  #                 type: number
+  #               name:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               phone_number:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               primary_billing:
+  #                 type: boolean
+  #               primary_shipping:
+  #                 type: boolean
+  #               resource_uri:
+  #                 type: string
+  #               state:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               street_1:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               street_2:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               updated_date:
+  #                 type: string
+  #               uuid:
+  #                 type: string
+  #               zipcode:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #             type: object
+  #           type: array
+  #         birth_date:
+  #           type: 'null'
+  #         cc_exp:
+  #           type: 'null'
+  #         cc_first_name:
+  #           type: 'null'
+  #         cc_last_4_digits:
+  #           type: 'null'
+  #         cc_last_name:
+  #           type: 'null'
+  #         charge_account:
+  #           type: boolean
+  #         city:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         company_name:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         contract_expiration:
+  #           type: 'null'
+  #         created_by:
+  #           type: string
+  #         created_date:
+  #           type: string
+  #         customer_groups:
+  #           type: array
+  #         customer_xt_uuid:
+  #           type: 'null'
+  #         deleted:
+  #           type: boolean
+  #         discount:
+  #           type: 'null'
+  #         email:
+  #           type: string
+  #         email_opt_in:
+  #           type: boolean
+  #         exp_date:
+  #           type: 'null'
+  #         expensify_account:
+  #           type: string
+  #         first_name:
+  #           type: string
+  #         gender:
+  #           type: integer
+  #         gift_card_numbers:
+  #           type: array
+  #         id:
+  #           type: integer
+  #         image:
+  #           type: 'null'
+  #         is_visitor:
+  #           type: boolean
+  #         last_name:
+  #           type: string
+  #         lic_number:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         loyalty_number:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         loyalty_ref_id:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         notes:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         ok_to_email:
+  #           type: boolean
+  #         past_due:
+  #           type: 'null'
+  #         phone_number:
+  #           type: string
+  #         phone_opt_in:
+  #           type: boolean
+  #         picture:
+  #           type: 'null'
+  #         pin:
+  #           type: string
+  #         post_opt_in:
+  #           type: boolean
+  #         ref_number:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         resource_uri:
+  #           type: string
+  #         reward_card_numbers:
+  #           type: array
+  #         source:
+  #           type:
+  #             - integer
+  #             - 'null'
+  #         state:
+  #           type: string
+  #         tax_exempt:
+  #           type: boolean
+  #         tax_location:
+  #           type: 'null'
+  #         third_party_id:
+  #           type: 'null'
+  #         title:
+  #           type: 'null'
+  #         total_purchases:
+  #           type: integer
+  #         total_visits:
+  #           type: integer
+  #         track_as_company:
+  #           type: boolean
+  #         type:
+  #           type: integer
+  #         updated_by:
+  #           type: string
+  #         updated_date:
+  #           type: string
+  #         uuid:
+  #           type: string
+  #         vehicles:
+  #           type: array
+  #         version_date:
+  #           type: string
+  #         zipcode:
+  #           type:
+  #             - 'null'
+  #             - string
+  #       type: object
+  #   retriever:
+  #     type: SimpleRetriever
+  #     requester:
+  #       type: HttpRequester
+  #       url_base: https://savoypizza.revelup.com/resources/
+  #       path: /Customer
+  #       http_method: GET
+  #       request_parameters: {}
+  #       request_headers: {}
+  #       request_body_json: {}
+  #       authenticator:
+  #         type: ApiKeyAuthenticator
+  #         header: API-Authentication
+  #         api_token: '{{ config["api_key"] }}'
+  #     record_selector:
+  #       type: RecordSelector
+  #       extractor:
+  #         type: DpathExtractor
+  #         field_path:
+  #           - objects
+  #     paginator:
+  #       type: DefaultPaginator
+  #       page_token_option:
+  #         type: RequestOption
+  #         inject_into: request_parameter
+  #         field_name: offset
+  #       page_size_option:
+  #         inject_into: request_parameter
+  #         type: RequestOption
+  #         field_name: limit
+  #       pagination_strategy:
+  #         type: OffsetIncrement
+  #         page_size: 300
+  #   incremental_sync:
+  #     type: DatetimeBasedCursor
+  #     datetime_format: '%Y-%m-%dT%H:%M:%S.%f'
+  #     start_datetime: '2023-01-03T21:29:36.755625'
+  #     end_datetime: '2023-01-05T21:29:36.755625'
+  #     step: P1D
+  #     cursor_field: updated_date
+  #     cursor_granularity: PT0.000001S
+  #     start_time_option:
+  #       inject_into: request_parameter
+  #       type: RequestOption
+  #       field_name: updated_date__gt
+  #     end_time_option:
+  #       inject_into: request_parameter
+  #       type: RequestOption
+  #       field_name: updated_date__lte
+  # - type: DeclarativeStream
+  #   name: product
+  #   primary_key:
+  #     - uuid
+  #   schema_loader:
+  #     type: InlineSchemaLoader
+  #     schema:
+  #       $schema: http://json-schema.org/schema#
+  #       properties:
+  #         active:
+  #           type: boolean
+  #         allow_price_override:
+  #           type: boolean
+  #         alternate_lookup:
+  #           type: array
+  #         attribute_1:
+  #           type: 'null'
+  #         attribute_1_name:
+  #           type: 'null'
+  #         attribute_2:
+  #           type: 'null'
+  #         attribute_2_name:
+  #           type: 'null'
+  #         attribute_parent:
+  #           type: 'null'
+  #         attribute_type:
+  #           type: integer
+  #         attribute_value_1:
+  #           type: 'null'
+  #         attribute_value_2:
+  #           type: 'null'
+  #         barcode:
+  #           type: string
+  #         bin_value:
+  #           type: 'null'
+  #         categories:
+  #           items:
+  #             type: string
+  #           type: array
+  #         category:
+  #           type: string
+  #         color_code:
+  #           type: integer
+  #         combo_discount_products:
+  #           type: array
+  #         combo_product_1:
+  #           type: 'null'
+  #         combo_product_2:
+  #           type: 'null'
+  #         combo_product_3:
+  #           type: 'null'
+  #         combo_product_4:
+  #           type: 'null'
+  #         combo_product_5:
+  #           type: 'null'
+  #         combo_product_6:
+  #           type: 'null'
+  #         combo_product_7:
+  #           type: 'null'
+  #         combo_product_8:
+  #           type: 'null'
+  #         combo_productsets:
+  #           type: array
+  #         combo_saving_productset:
+  #           type: 'null'
+  #         combo_upcharge:
+  #           type: string
+  #         comments:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         commission:
+  #           type: string
+  #         commission_type:
+  #           type: integer
+  #         conv_ordering_disp:
+  #           type: boolean
+  #         conv_ordering_sort_order:
+  #           type: 'null'
+  #         cost:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         course_number:
+  #           type: 'null'
+  #         created_by:
+  #           type: string
+  #         created_date:
+  #           type: string
+  #         crv_enabled:
+  #           type: boolean
+  #         crv_label:
+  #           type: 'null'
+  #         crv_value:
+  #           type: 'null'
+  #         default_inventory:
+  #           type: boolean
+  #         delivery_method:
+  #           type: 'null'
+  #         dept:
+  #           type: 'null'
+  #         description:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         dining_options:
+  #           type: string
+  #         disable_modifier_popup:
+  #           type: boolean
+  #         discountable:
+  #           type: boolean
+  #         display_on_kiosk:
+  #           type: boolean
+  #         display_online:
+  #           type: boolean
+  #         dynamic_combo:
+  #           type: 'null'
+  #         ebt_no:
+  #           type: boolean
+  #         eligible_for_purchase_rewards:
+  #           type: boolean
+  #         end_date:
+  #           type: 'null'
+  #         establishment:
+  #           type: string
+  #         export:
+  #           type: boolean
+  #         external_shipping_addresses:
+  #           type: array
+  #         flat_tax_units:
+  #           type: integer
+  #         happy_hour_price:
+  #           type: 'null'
+  #         id:
+  #           type: integer
+  #         image:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         increase_group_combo_price_based_on_upcharge:
+  #           type: boolean
+  #         is_cold:
+  #           type: boolean
+  #         is_combo:
+  #           type: integer
+  #         is_drink:
+  #           type: boolean
+  #         is_food:
+  #           type: boolean
+  #         item_no:
+  #           type: 'null'
+  #         kds_tags:
+  #           type: array
+  #         kitchen_description:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         kitchen_print_name:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         label_date:
+  #           type: string
+  #         limit_type:
+  #           type: integer
+  #         limit_value:
+  #           type: string
+  #         list_printers:
+  #           items:
+  #             type: string
+  #           type: array
+  #         manufacturer:
+  #           type: 'null'
+  #         max_price:
+  #           type: 'null'
+  #         max_threshold_price:
+  #           type: 'null'
+  #         min_price:
+  #           type: 'null'
+  #         msrp:
+  #           type: 'null'
+  #         name:
+  #           type: string
+  #         negative_sales_restricted:
+  #           type: boolean
+  #         not_returnable:
+  #           type: boolean
+  #         original_price:
+  #           type: 'null'
+  #         parent_dynamic_combo:
+  #           type: 'null'
+  #         parent_product:
+  #           type: 'null'
+  #         percent_markup:
+  #           type: 'null'
+  #         point_redeem:
+  #           type: 'null'
+  #         point_value:
+  #           type: 'null'
+  #         pos_column_width:
+  #           type: integer
+  #         prep_recipe:
+  #           type: boolean
+  #         prep_yield:
+  #           type: 'null'
+  #         preparation_time:
+  #           type: integer
+  #         prevent_sales:
+  #           type: boolean
+  #         price:
+  #           type: number
+  #         price_embedded:
+  #           type: boolean
+  #         price_tiers:
+  #           type: array
+  #         print_tags:
+  #           type: boolean
+  #         printers:
+  #           items:
+  #             type: string
+  #           type: array
+  #         product_brand:
+  #           type: 'null'
+  #         product_group:
+  #           items:
+  #             type: string
+  #           type: array
+  #         product_height:
+  #           type: 'null'
+  #         product_height_unit:
+  #           type: 'null'
+  #         product_length:
+  #           type: 'null'
+  #         product_length_unit:
+  #           type: 'null'
+  #         product_price_in_combo:
+  #           type: 'null'
+  #         product_weight:
+  #           type: 'null'
+  #         product_weight_unit:
+  #           type: integer
+  #         product_width:
+  #           type: 'null'
+  #         product_width_unit:
+  #           type: 'null'
+  #         productclass:
+  #           type: string
+  #         promotional_product:
+  #           type: 'null'
+  #         prompt_for_quantity:
+  #           type: boolean
+  #         prompt_for_upsell:
+  #           type: integer
+  #         purchase_product_age:
+  #           type: 'null'
+  #         purchase_product_age_msg:
+  #           type: 'null'
+  #         purchase_reward_multiplier:
+  #           type: number
+  #         quick_pick_group:
+  #           type: 'null'
+  #         receipt_text:
+  #           type: 'null'
+  #         redemption_level:
+  #           type: 'null'
+  #         require_serial_number:
+  #           type: boolean
+  #         resource_uri:
+  #           type: string
+  #         retail:
+  #           type: 'null'
+  #         rti_combo:
+  #           type: boolean
+  #         seasonal_item:
+  #           type: boolean
+  #         service_duration:
+  #           type: integer
+  #         set_price_per_group_for_combos:
+  #           type: boolean
+  #         shelf_label_quantity:
+  #           type: integer
+  #         shopify_sku:
+  #           type: 'null'
+  #         show_on_pos:
+  #           type: boolean
+  #         size_chart:
+  #           type: 'null'
+  #         sku:
+  #           type: string
+  #         sold_by_weight:
+  #           type: boolean
+  #         sorting:
+  #           type: integer
+  #         start_date:
+  #           type: 'null'
+  #         surcharge:
+  #           type: string
+  #         tare:
+  #           type: 'null'
+  #         tax:
+  #           anyOf:
+  #             - type: 'null'
+  #             - properties:
+  #                 active:
+  #                   type: boolean
+  #                 agency:
+  #                   type: 'null'
+  #                 created_by:
+  #                   type: string
+  #                 created_date:
+  #                   type: string
+  #                 dining_options:
+  #                   type: 'null'
+  #                 establishment:
+  #                   type: string
+  #                 fiscal_rate:
+  #                   type: integer
+  #                 id:
+  #                   type: integer
+  #                 max_quantity_threshold:
+  #                   type: 'null'
+  #                 max_threshold:
+  #                   type: 'null'
+  #                 min_quantity_threshold:
+  #                   type: 'null'
+  #                 min_threshold:
+  #                   type: 'null'
+  #                 name:
+  #                   type: string
+  #                 resource_uri:
+  #                   type: string
+  #                 rounding_type:
+  #                   type: integer
+  #                 tax_rate:
+  #                   items:
+  #                     properties:
+  #                       created_by:
+  #                         type: string
+  #                       created_date:
+  #                         type: string
+  #                       effective_from:
+  #                         type: string
+  #                       effective_to:
+  #                         type: 'null'
+  #                       id:
+  #                         type: integer
+  #                       resource_uri:
+  #                         type: string
+  #                       tax:
+  #                         type: string
+  #                       tax_rate:
+  #                         type: number
+  #                       tax_table:
+  #                         type: 'null'
+  #                       updated_by:
+  #                         type: string
+  #                       updated_date:
+  #                         type: string
+  #                       use_tax_table:
+  #                         type: boolean
+  #                     type: object
+  #                   type: array
+  #                 tax_type:
+  #                   type: integer
+  #                 updated_by:
+  #                   type: string
+  #                 updated_date:
+  #                   type: string
+  #               type: object
+  #         tax_class:
+  #           type: integer
+  #         tax_codes:
+  #           type: array
+  #         tax_included:
+  #           type: boolean
+  #         third_party_id:
+  #           type: string
+  #         track_in_inventory:
+  #           type: boolean
+  #         track_recipe:
+  #           type: boolean
+  #         type:
+  #           type: integer
+  #         unit_size:
+  #           type: 'null'
+  #         uom:
+  #           type: string
+  #         updated_by:
+  #           type: string
+  #         updated_date:
+  #           type: string
+  #         upsell_combo_price:
+  #           type: string
+  #         upsell_combos:
+  #           type: array
+  #         uuid:
+  #           type: string
+  #         variable_pricing:
+  #           type: boolean
+  #         variable_pricing_by:
+  #           type: integer
+  #       type: object
+  #   retriever:
+  #     type: SimpleRetriever
+  #     requester:
+  #       type: HttpRequester
+  #       url_base: https://savoypizza.revelup.com/resources/
+  #       path: /Product
+  #       http_method: GET
+  #       request_parameters: {}
+  #       request_headers: {}
+  #       request_body_json: {}
+  #       authenticator:
+  #         type: ApiKeyAuthenticator
+  #         header: API-Authentication
+  #         api_token: '{{ config["api_key"] }}'
+  #     record_selector:
+  #       type: RecordSelector
+  #       extractor:
+  #         type: DpathExtractor
+  #         field_path:
+  #           - objects
+  #     paginator:
+  #       type: DefaultPaginator
+  #       page_token_option:
+  #         type: RequestOption
+  #         inject_into: request_parameter
+  #         field_name: offset
+  #       page_size_option:
+  #         inject_into: request_parameter
+  #         type: RequestOption
+  #         field_name: limit
+  #       pagination_strategy:
+  #         type: OffsetIncrement
+  #         page_size: 300
+  #   incremental_sync:
+  #     type: DatetimeBasedCursor
+  #     datetime_format: '%Y-%m-%dT%H:%M:%S.%f'
+  #     start_datetime: '2023-01-28T01:01:01.000000'
+  #     step: P1D
+  #     cursor_field: updated_date
+  #     cursor_granularity: PT0.000001S
+  #     start_time_option:
+  #       inject_into: request_parameter
+  #       type: RequestOption
+  #       field_name: updated_date__gt
+  #     end_time_option:
+  #       inject_into: request_parameter
+  #       type: RequestOption
+  #       field_name: updated_date__lte
+  #     end_datetime: '2023-03-28T01:01:01.000000'
+  # - type: DeclarativeStream
+  #   name: orderitem
+  #   primary_key:
+  #     - uuid
+  #   schema_loader:
+  #     type: InlineSchemaLoader
+  #     schema:
+  #       $schema: http://json-schema.org/schema#
+  #       properties:
+  #         applied_discounts:
+  #           items:
+  #             properties:
+  #               discount:
+  #                 type:
+  #                   - 'null'
+  #                   - string
+  #               discount_amount:
+  #                 type: string
+  #               discount_code:
+  #                 type: string
+  #               discount_function:
+  #                 type: integer
+  #               discounted_by:
+  #                 type: 'null'
+  #               floor:
+  #                 type: string
+  #               id:
+  #                 type: integer
+  #               name:
+  #                 type: string
+  #               orderitem:
+  #                 type: string
+  #               price_tier_price:
+  #                 type: number
+  #               qty:
+  #                 type: integer
+  #               resource_uri:
+  #                 type: string
+  #               rule_amount:
+  #                 type: string
+  #               rule_type:
+  #                 type: integer
+  #               stackable_type:
+  #                 type: integer
+  #               tax_amount_included:
+  #                 type: string
+  #               taxed:
+  #                 type: boolean
+  #               uuid:
+  #                 type: string
+  #             type: object
+  #           type: array
+  #         applied_service_fee:
+  #           type: array
+  #         applied_taxes:
+  #           items:
+  #             properties:
+  #               actual_tax_rate:
+  #                 type: string
+  #               fiscal_rate:
+  #                 type: string
+  #               flat_tax_units:
+  #                 type: integer
+  #               id:
+  #                 type: integer
+  #               local_tax_id:
+  #                 type: integer
+  #               max_quantity_threshold:
+  #                 type: integer
+  #               max_threshold:
+  #                 type: string
+  #               min_quantity_threshold:
+  #                 type: integer
+  #               min_threshold:
+  #                 type: string
+  #               name:
+  #                 type: string
+  #               on_full_price:
+  #                 type: boolean
+  #               order_item:
+  #                 type: string
+  #               resource_uri:
+  #                 type: string
+  #               rounding_type:
+  #                 type: integer
+  #               tax_amount:
+  #                 type: string
+  #               tax_rate:
+  #                 type: string
+  #               tax_table:
+  #                 type: 'null'
+  #               tax_type:
+  #                 type: integer
+  #               uuid:
+  #                 type: string
+  #             type: object
+  #           type: array
+  #         appointment:
+  #           type: 'null'
+  #         appointment_ref_uuid:
+  #           type: 'null'
+  #         bill_parent:
+  #           type: 'null'
+  #         catering_complete:
+  #           type: boolean
+  #         catering_delivery_date:
+  #           type: 'null'
+  #         combo_fraction_part:
+  #           type: integer
+  #         combo_product_set:
+  #           type: 'null'
+  #         combo_saving_amount:
+  #           type: string
+  #         combo_type:
+  #           type: integer
+  #         combo_used:
+  #           type: 'null'
+  #         combo_uuid:
+  #           type: 'null'
+  #         commission_amount:
+  #           type: string
+  #         commissions:
+  #           type: array
+  #         cost:
+  #           type: string
+  #         course_number:
+  #           type: integer
+  #         created_by:
+  #           type: string
+  #         created_date:
+  #           type: string
+  #         crv_value:
+  #           type: number
+  #         cup_qty:
+  #           type: integer
+  #         cup_weight:
+  #           type: number
+  #         date_paid:
+  #           type: 'null'
+  #         deleted:
+  #           type: boolean
+  #         deleted_date:
+  #           type: 'null'
+  #         dining_option:
+  #           type: integer
+  #         discount:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         discount_amount:
+  #           type:
+  #             - 'null'
+  #             - number
+  #         discount_code:
+  #           type: 'null'
+  #         discount_reason:
+  #           type: string
+  #         discount_rule_amount:
+  #           type:
+  #             - 'null'
+  #             - number
+  #         discount_rule_type:
+  #           type:
+  #             - integer
+  #             - 'null'
+  #         discount_tax_amount_included:
+  #           type: string
+  #         discount_taxed:
+  #           type:
+  #             - boolean
+  #             - 'null'
+  #         discounted_by:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         dynamic_combo:
+  #           type: 'null'
+  #         dynamic_combo_slot:
+  #           type: 'null'
+  #         ervc_type:
+  #           type: integer
+  #         event_date:
+  #           type: 'null'
+  #         exchange_discount:
+  #           type: 'null'
+  #         exchanged:
+  #           type: 'null'
+  #         exclude_from_discounts:
+  #           type: boolean
+  #         expedited:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         external_shipping_address:
+  #           type: 'null'
+  #         gift_card_number:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         id:
+  #           type: integer
+  #         ingredientitems:
+  #           type: array
+  #         initial_price:
+  #           type: number
+  #         invoice_document_uuid:
+  #           type: 'null'
+  #         is_cold:
+  #           type: boolean
+  #         is_discounted:
+  #           type: boolean
+  #         is_layaway:
+  #           type: boolean
+  #         is_store_credit:
+  #           type: boolean
+  #         item_type:
+  #           type: integer
+  #         kitchen_completed:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         manual_unit_price_adjustment:
+  #           type: number
+  #         modifier_amount:
+  #           type: number
+  #         modifier_cost:
+  #           type: string
+  #         modifieritems:
+  #           items:
+  #             properties:
+  #               conditional_of:
+  #                 type: 'null'
+  #               id:
+  #                 type: integer
+  #               is_discounted:
+  #                 type: boolean
+  #               is_substituted:
+  #                 type: boolean
+  #               mod_type:
+  #                 type: integer
+  #               modifier:
+  #                 type: string
+  #               modifier_cost:
+  #                 type: string
+  #               modifier_price:
+  #                 type: number
+  #               no_modifier_substitute:
+  #                 type: boolean
+  #               order_item:
+  #                 type: string
+  #               qty:
+  #                 type: number
+  #               qty_type:
+  #                 type: integer
+  #               resource_uri:
+  #                 type: string
+  #               split_combo_data:
+  #                 properties:
+  #                   combo_fraction_part:
+  #                     type: integer
+  #                   inherited_from_parent:
+  #                     type: boolean
+  #                   overriden_price:
+  #                     type: integer
+  #                 type: object
+  #               substitution_of:
+  #                 type: 'null'
+  #               uuid:
+  #                 type: string
+  #             type: object
+  #           type: array
+  #         not_returnable:
+  #           type: boolean
+  #         on_hold:
+  #           type: boolean
+  #         on_layaway:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         order:
+  #           type: string
+  #         order_local_id:
+  #           type: string
+  #         package:
+  #           type: 'null'
+  #         package_uuid:
+  #           type: 'null'
+  #         parent_combo_uuid:
+  #           type: 'null'
+  #         parent_uuid:
+  #           type: 'null'
+  #         price:
+  #           type: number
+  #         price_to_display:
+  #           type: string
+  #         printed:
+  #           type: boolean
+  #         product:
+  #           type: string
+  #         product_name_override:
+  #           type: string
+  #         pump_date:
+  #           type: 'null'
+  #         pump_number:
+  #           type: 'null'
+  #         pure_sales:
+  #           type: number
+  #         quantity:
+  #           type: integer
+  #         reference_discount:
+  #           type: string
+  #         reference_discounts:
+  #           type: string
+  #         resource_uri:
+  #           type: string
+  #         returned_establishment:
+  #           type: 'null'
+  #         sales_tax_exemption_reason:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         scanned_barcode:
+  #           type: 'null'
+  #         seat_number:
+  #           type: 'null'
+  #         sent:
+  #           type: boolean
+  #         serial_number:
+  #           type: 'null'
+  #         service_fee_tax:
+  #           type: string
+  #         service_fee_taxed:
+  #           type: string
+  #         service_fee_untaxed:
+  #           type: string
+  #         service_provider:
+  #           type: 'null'
+  #         shared:
+  #           type: integer
+  #         sold_by_weight:
+  #           type: boolean
+  #         special_request:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         split_parts:
+  #           type: number
+  #         split_type:
+  #           type: integer
+  #         split_with_seat:
+  #           type: integer
+  #         start_time:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         station:
+  #           type: string
+  #         tax_amount:
+  #           type: number
+  #         tax_included:
+  #           type: boolean
+  #         tax_rate:
+  #           type: number
+  #         tax_rebate:
+  #           type: number
+  #         taxed_flag:
+  #           type: boolean
+  #         temp_sort:
+  #           type: integer
+  #         uom:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         updated_by:
+  #           type: string
+  #         updated_date:
+  #           type: string
+  #         uuid:
+  #           type: string
+  #         void_ref_uuid:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         voided_by:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         voided_date:
+  #           type:
+  #             - 'null'
+  #             - string
+  #         voided_reason:
+  #           type: string
+  #         weight:
+  #           type: number
+  #         wholesale_saving_amount:
+  #           type: string
+  #       type: object
+  #   retriever:
+  #     type: SimpleRetriever
+  #     requester:
+  #       type: HttpRequester
+  #       url_base: https://savoypizza.revelup.com/resources/
+  #       path: /OrderItem
+  #       http_method: GET
+  #       request_parameters: {}
+  #       request_headers: {}
+  #       request_body_json: {}
+  #       authenticator:
+  #         type: ApiKeyAuthenticator
+  #         header: API-Authentication
+  #         api_token: '{{ config["api_key"] }}'
+  #     record_selector:
+  #       type: RecordSelector
+  #       extractor:
+  #         type: DpathExtractor
+  #         field_path:
+  #           - objects
+  #     paginator:
+  #       type: DefaultPaginator
+  #       page_token_option:
+  #         type: RequestOption
+  #         inject_into: request_parameter
+  #         field_name: offset
+  #       page_size_option:
+  #         inject_into: request_parameter
+  #         type: RequestOption
+  #         field_name: limit
+  #       pagination_strategy:
+  #         type: OffsetIncrement
+  #         page_size: 300
+  #   incremental_sync:
+  #     type: DatetimeBasedCursor
+  #     datetime_format: '%Y-%m-%dT%H:%M:%S'
+  #     start_datetime: '2023-01-20T01:01:01'
+  #     end_datetime: '2023-02-20T01:01:01'
+  #     step: P1D
+  #     cursor_field: updated_date
+  #     cursor_granularity: PT0.000001S
+  #     start_time_option:
+  #       inject_into: request_parameter
+  #       type: RequestOption
+  #       field_name: updated_date__gt
+  #     end_time_option:
+  #       inject_into: request_parameter
+  #       type: RequestOption
+  #       field_name: updated_date__lte
+spec:
+  connection_specification:
+    $schema: http://json-schema.org/draft-07/schema#
+    type: object
+    required:
+      - start_date
+      - api_key
+    properties:
+      start_date:
+        title: start_date
+        airbyte_secret: false
+        type: string
+      api_key:
+        type: string
+        title: api_key
+        airbyte_secret: true
+    additionalProperties: true
+  documentation_url: https://example.org
+  type: Spec

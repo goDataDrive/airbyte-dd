@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "building_number": {
+      "type": "null"
+    },
+    "city_name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "county": {
+      "type": "null"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "created_date": {
+      "type": "string"
+    },
+    "district": {
+      "type": "null"
+    },
+    "door": {
+      "type": "null"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "is_external": {
+      "type": "boolean"
+    },
+    "latitude": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "line_1": {
+      "type": "string"
+    },
+    "line_2": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "province": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "resource_uri": {
+      "type": "string"
+    },
+    "state": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "updated_by": {
+      "type": "string"
+    },
+    "updated_date": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
