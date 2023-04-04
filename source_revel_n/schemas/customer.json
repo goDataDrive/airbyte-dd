@@ -1,0 +1,318 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "customer stream schema",
+    "type": "object",
+    "properties": {
+        "accept_checks": {
+            "type": "boolean"
+        },
+        "account_balance": {},
+        "account_limit": {},
+        "active": {
+            "type": "boolean"
+        },
+        "address": {
+            "type": "string"
+        },
+        "addresses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "active": {
+                        "type": "boolean"
+                    },
+                    "address_type": {},
+                    "city": {
+                        "type": "string"
+                    },
+                    "company_name": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "created_date": {
+                        "type": "string"
+                    },
+                    "customer": {
+                        "type": "string"
+                    },
+                    "delivery_instructions": {
+                        "type": "string"
+                    },
+                    "email": {},
+                    "id": {
+                        "type": "number"
+                    },
+                    "latitude": {
+                        "type": "number"
+                    },
+                    "longitude": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "phone_number": {},
+                    "primary_billing": {
+                        "type": "boolean"
+                    },
+                    "primary_shipping": {
+                        "type": "boolean"
+                    },
+                    "resource_uri": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "street_1": {
+                        "type": "string"
+                    },
+                    "street_2": {},
+                    "updated_date": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "zipcode": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "active",
+                    "address_type",
+                    "city",
+                    "company_name",
+                    "country",
+                    "created_date",
+                    "customer",
+                    "delivery_instructions",
+                    "email",
+                    "id",
+                    "latitude",
+                    "longitude",
+                    "name",
+                    "phone_number",
+                    "primary_billing",
+                    "primary_shipping",
+                    "resource_uri",
+                    "state",
+                    "street_1",
+                    "street_2",
+                    "updated_date",
+                    "uuid",
+                    "zipcode"
+                ]
+            }
+        },
+        "birth_date": {},
+        "cc_exp": {},
+        "cc_first_name": {},
+        "cc_last_4_digits": {},
+        "cc_last_name": {},
+        "charge_account": {
+            "type": "boolean"
+        },
+        "city": {
+            "type": "string"
+        },
+        "company_name": {
+            "type": "string"
+        },
+        "contract_expiration": {},
+        "created_by": {
+            "type": "string"
+        },
+        "created_date": {
+            "type": "string"
+        },
+        "customer_groups": {
+            "type": "array",
+            "items": {}
+        },
+        "customer_xt_uuid": {},
+        "deleted": {
+            "type": "boolean"
+        },
+        "discount": {},
+        "email": {
+            "type": "string"
+        },
+        "email_opt_in": {
+            "type": "boolean"
+        },
+        "exp_date": {},
+        "expensify_account": {
+            "type": "string"
+        },
+        "first_name": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "number"
+        },
+        "gift_card_numbers": {
+            "type": "array",
+            "items": {}
+        },
+        "id": {
+            "type": "number"
+        },
+        "image": {},
+        "is_visitor": {
+            "type": "boolean"
+        },
+        "last_name": {
+            "type": "string"
+        },
+        "lic_number": {
+            "type": "string"
+        },
+        "loyalty_number": {
+            "type": "string"
+        },
+        "loyalty_ref_id": {
+            "type": "string"
+        },
+        "notes": {
+            "type": "string"
+        },
+        "ok_to_email": {
+            "type": "boolean"
+        },
+        "past_due": {},
+        "phone_number": {
+            "type": "string"
+        },
+        "phone_opt_in": {
+            "type": "boolean"
+        },
+        "picture": {},
+        "pin": {
+            "type": "string"
+        },
+        "post_opt_in": {
+            "type": "boolean"
+        },
+        "ref_number": {
+            "type": "string"
+        },
+        "resource_uri": {
+            "type": "string"
+        },
+        "reward_card_numbers": {
+            "type": "array",
+            "items": {}
+        },
+        "source": {
+            "type": "number"
+        },
+        "state": {
+            "type": "string"
+        },
+        "tax_exempt": {
+            "type": "boolean"
+        },
+        "tax_location": {},
+        "third_party_id": {},
+        "title": {},
+        "total_purchases": {
+            "type": "number"
+        },
+        "total_visits": {
+            "type": "number"
+        },
+        "track_as_company": {
+            "type": "boolean"
+        },
+        "type": {
+            "type": "number"
+        },
+        "updated_by": {
+            "type": "string"
+        },
+        "updated_date": {
+            "type": "string"
+        },
+        "uuid": {
+            "type": "string"
+        },
+        "vehicles": {
+            "type": "array",
+            "items": {}
+        },
+        "version_date": {
+            "type": "string"
+        },
+        "zipcode": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "accept_checks",
+        "account_balance",
+        "account_limit",
+        "active",
+        "address",
+        "addresses",
+        "birth_date",
+        "cc_exp",
+        "cc_first_name",
+        "cc_last_4_digits",
+        "cc_last_name",
+        "charge_account",
+        "city",
+        "company_name",
+        "contract_expiration",
+        "created_by",
+        "created_date",
+        "customer_groups",
+        "customer_xt_uuid",
+        "deleted",
+        "discount",
+        "email",
+        "email_opt_in",
+        "exp_date",
+        "expensify_account",
+        "first_name",
+        "gender",
+        "gift_card_numbers",
+        "id",
+        "image",
+        "is_visitor",
+        "last_name",
+        "lic_number",
+        "loyalty_number",
+        "loyalty_ref_id",
+        "notes",
+        "ok_to_email",
+        "past_due",
+        "phone_number",
+        "phone_opt_in",
+        "picture",
+        "pin",
+        "post_opt_in",
+        "ref_number",
+        "resource_uri",
+        "reward_card_numbers",
+        "source",
+        "state",
+        "tax_exempt",
+        "tax_location",
+        "third_party_id",
+        "title",
+        "total_purchases",
+        "total_visits",
+        "track_as_company",
+        "type",
+        "updated_by",
+        "updated_date",
+        "uuid",
+        "vehicles",
+        "version_date",
+        "zipcode"
+    ]
+}
