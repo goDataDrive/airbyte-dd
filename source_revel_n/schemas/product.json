@@ -1,0 +1,505 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Product schema",
+    "type": "object",
+    "properties": {
+        "active": {
+            "type": "boolean"
+        },
+        "allow_price_override": {
+            "type": "boolean"
+        },
+        "alternate_lookup": {
+            "type": "array",
+            "items": {}
+        },
+        "attribute_1": {},
+        "attribute_1_name": {},
+        "attribute_2": {},
+        "attribute_2_name": {},
+        "attribute_parent": {},
+        "attribute_type": {
+            "type": "number"
+        },
+        "attribute_value_1": {},
+        "attribute_value_2": {},
+        "barcode": {
+            "type": "string"
+        },
+        "bin_value": {},
+        "categories": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "category": {
+            "type": "string"
+        },
+        "color_code": {
+            "type": "number"
+        },
+        "combo_discount_products": {
+            "type": "array",
+            "items": {}
+        },
+        "combo_product_1": {},
+        "combo_product_2": {},
+        "combo_product_3": {},
+        "combo_product_4": {},
+        "combo_product_5": {},
+        "combo_product_6": {},
+        "combo_product_7": {},
+        "combo_product_8": {},
+        "combo_productsets": {
+            "type": "array",
+            "items": {}
+        },
+        "combo_saving_productset": {},
+        "combo_upcharge": {
+            "type": "string"
+        },
+        "comments": {
+            "type": "string"
+        },
+        "commission": {
+            "type": "string"
+        },
+        "commission_type": {
+            "type": "number"
+        },
+        "conv_ordering_disp": {
+            "type": "boolean"
+        },
+        "conv_ordering_sort_order": {},
+        "cost": {
+            "type": "string"
+        },
+        "course_number": {},
+        "created_by": {
+            "type": "string"
+        },
+        "created_date": {
+            "type": "string"
+        },
+        "crv_enabled": {
+            "type": "boolean"
+        },
+        "crv_label": {},
+        "crv_value": {},
+        "default_inventory": {
+            "type": "boolean"
+        },
+        "delivery_method": {},
+        "dept": {},
+        "description": {
+            "type": "string"
+        },
+        "dining_options": {
+            "type": "string"
+        },
+        "disable_modifier_popup": {
+            "type": "boolean"
+        },
+        "discountable": {
+            "type": "boolean"
+        },
+        "display_on_kiosk": {
+            "type": "boolean"
+        },
+        "display_online": {
+            "type": "boolean"
+        },
+        "dynamic_combo": {},
+        "ebt_no": {
+            "type": "boolean"
+        },
+        "eligible_for_purchase_rewards": {
+            "type": "boolean"
+        },
+        "end_date": {},
+        "establishment": {
+            "type": "string"
+        },
+        "export": {
+            "type": "boolean"
+        },
+        "external_shipping_addresses": {
+            "type": "array",
+            "items": {}
+        },
+        "flat_tax_units": {
+            "type": "number"
+        },
+        "happy_hour_price": {},
+        "id": {
+            "type": "number"
+        },
+        "image": {},
+        "increase_group_combo_price_based_on_upcharge": {
+            "type": "boolean"
+        },
+        "is_cold": {
+            "type": "boolean"
+        },
+        "is_combo": {
+            "type": "number"
+        },
+        "is_drink": {
+            "type": "boolean"
+        },
+        "is_food": {
+            "type": "boolean"
+        },
+        "item_no": {},
+        "kds_tags": {
+            "type": "array",
+            "items": {}
+        },
+        "kitchen_description": {
+            "type": "string"
+        },
+        "kitchen_print_name": {
+            "type": "string"
+        },
+        "label_date": {
+            "type": "string"
+        },
+        "limit_type": {
+            "type": "number"
+        },
+        "limit_value": {
+            "type": "string"
+        },
+        "list_printers": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "manufacturer": {},
+        "max_price": {},
+        "max_threshold_price": {},
+        "min_price": {},
+        "msrp": {},
+        "name": {
+            "type": "string"
+        },
+        "negative_sales_restricted": {
+            "type": "boolean"
+        },
+        "not_returnable": {
+            "type": "boolean"
+        },
+        "original_price": {},
+        "parent_dynamic_combo": {},
+        "parent_product": {},
+        "percent_markup": {},
+        "point_redeem": {},
+        "point_value": {},
+        "prep_recipe": {
+            "type": "boolean"
+        },
+        "prep_yield": {},
+        "preparation_time": {
+            "type": "number"
+        },
+        "prevent_sales": {
+            "type": "boolean"
+        },
+        "price": {
+            "type": "number"
+        },
+        "price_embedded": {
+            "type": "boolean"
+        },
+        "price_tiers": {
+            "type": "array",
+            "items": {}
+        },
+        "print_tags": {
+            "type": "boolean"
+        },
+        "printers": {
+            "type": "array",
+            "items": {}
+        },
+        "product_brand": {},
+        "product_group": {
+            "type": "array",
+            "items": {}
+        },
+        "product_height": {},
+        "product_height_unit": {},
+        "product_length": {},
+        "product_length_unit": {},
+        "product_price_in_combo": {},
+        "product_weight": {},
+        "product_weight_unit": {
+            "type": "number"
+        },
+        "product_width": {},
+        "product_width_unit": {},
+        "productclass": {
+            "type": "string"
+        },
+        "promotional_product": {},
+        "prompt_for_quantity": {
+            "type": "boolean"
+        },
+        "prompt_for_upsell": {
+            "type": "number"
+        },
+        "purchase_product_age": {},
+        "purchase_product_age_msg": {},
+        "purchase_reward_multiplier": {
+            "type": "number"
+        },
+        "quick_pick_group": {},
+        "receipt_text": {},
+        "redemption_level": {},
+        "require_serial_number": {
+            "type": "boolean"
+        },
+        "resource_uri": {
+            "type": "string"
+        },
+        "retail": {},
+        "rti_combo": {
+            "type": "boolean"
+        },
+        "seasonal_item": {
+            "type": "boolean"
+        },
+        "service_duration": {
+            "type": "number"
+        },
+        "set_price_per_group_for_combos": {
+            "type": "boolean"
+        },
+        "shelf_label_quantity": {
+            "type": "number"
+        },
+        "shopify_sku": {},
+        "show_on_pos": {
+            "type": "boolean"
+        },
+        "size_chart": {},
+        "sku": {
+            "type": "string"
+        },
+        "sold_by_weight": {
+            "type": "boolean"
+        },
+        "sorting": {
+            "type": "number"
+        },
+        "start_date": {},
+        "surcharge": {
+            "type": "string"
+        },
+        "tare": {},
+        "tax": {},
+        "tax_class": {
+            "type": "number"
+        },
+        "tax_codes": {
+            "type": "array",
+            "items": {}
+        },
+        "tax_included": {
+            "type": "boolean"
+        },
+        "third_party_id": {
+            "type": "string"
+        },
+        "track_in_inventory": {
+            "type": "boolean"
+        },
+        "track_recipe": {
+            "type": "boolean"
+        },
+        "type": {
+            "type": "number"
+        },
+        "unit_size": {},
+        "uom": {
+            "type": "string"
+        },
+        "updated_by": {
+            "type": "string"
+        },
+        "updated_date": {
+            "type": "string"
+        },
+        "upsell_combo_price": {
+            "type": "string"
+        },
+        "upsell_combos": {
+            "type": "array",
+            "items": {}
+        },
+        "uuid": {
+            "type": "string"
+        },
+        "variable_pricing": {
+            "type": "boolean"
+        },
+        "variable_pricing_by": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "active",
+        "allow_price_override",
+        "alternate_lookup",
+        "attribute_1",
+        "attribute_1_name",
+        "attribute_2",
+        "attribute_2_name",
+        "attribute_parent",
+        "attribute_type",
+        "attribute_value_1",
+        "attribute_value_2",
+        "barcode",
+        "bin_value",
+        "categories",
+        "category",
+        "color_code",
+        "combo_discount_products",
+        "combo_product_1",
+        "combo_product_2",
+        "combo_product_3",
+        "combo_product_4",
+        "combo_product_5",
+        "combo_product_6",
+        "combo_product_7",
+        "combo_product_8",
+        "combo_productsets",
+        "combo_saving_productset",
+        "combo_upcharge",
+        "comments",
+        "commission",
+        "commission_type",
+        "conv_ordering_disp",
+        "conv_ordering_sort_order",
+        "cost",
+        "course_number",
+        "created_by",
+        "created_date",
+        "crv_enabled",
+        "crv_label",
+        "crv_value",
+        "default_inventory",
+        "delivery_method",
+        "dept",
+        "description",
+        "dining_options",
+        "disable_modifier_popup",
+        "discountable",
+        "display_on_kiosk",
+        "display_online",
+        "dynamic_combo",
+        "ebt_no",
+        "eligible_for_purchase_rewards",
+        "end_date",
+        "establishment",
+        "export",
+        "external_shipping_addresses",
+        "flat_tax_units",
+        "happy_hour_price",
+        "id",
+        "image",
+        "increase_group_combo_price_based_on_upcharge",
+        "is_cold",
+        "is_combo",
+        "is_drink",
+        "is_food",
+        "item_no",
+        "kds_tags",
+        "kitchen_description",
+        "kitchen_print_name",
+        "label_date",
+        "limit_type",
+        "limit_value",
+        "list_printers",
+        "manufacturer",
+        "max_price",
+        "max_threshold_price",
+        "min_price",
+        "msrp",
+        "name",
+        "negative_sales_restricted",
+        "not_returnable",
+        "original_price",
+        "parent_dynamic_combo",
+        "parent_product",
+        "percent_markup",
+        "point_redeem",
+        "point_value",
+        "prep_recipe",
+        "prep_yield",
+        "preparation_time",
+        "prevent_sales",
+        "price",
+        "price_embedded",
+        "price_tiers",
+        "print_tags",
+        "printers",
+        "product_brand",
+        "product_group",
+        "product_height",
+        "product_height_unit",
+        "product_length",
+        "product_length_unit",
+        "product_price_in_combo",
+        "product_weight",
+        "product_weight_unit",
+        "product_width",
+        "product_width_unit",
+        "productclass",
+        "promotional_product",
+        "prompt_for_quantity",
+        "prompt_for_upsell",
+        "purchase_product_age",
+        "purchase_product_age_msg",
+        "purchase_reward_multiplier",
+        "quick_pick_group",
+        "receipt_text",
+        "redemption_level",
+        "require_serial_number",
+        "resource_uri",
+        "retail",
+        "rti_combo",
+        "seasonal_item",
+        "service_duration",
+        "set_price_per_group_for_combos",
+        "shelf_label_quantity",
+        "shopify_sku",
+        "show_on_pos",
+        "size_chart",
+        "sku",
+        "sold_by_weight",
+        "sorting",
+        "start_date",
+        "surcharge",
+        "tare",
+        "tax",
+        "tax_class",
+        "tax_codes",
+        "tax_included",
+        "third_party_id",
+        "track_in_inventory",
+        "track_recipe",
+        "type",
+        "unit_size",
+        "uom",
+        "updated_by",
+        "updated_date",
+        "upsell_combo_price",
+        "upsell_combos",
+        "uuid",
+        "variable_pricing",
+        "variable_pricing_by"
+    ]
+}

@@ -4,7 +4,7 @@ check:
   type: CheckStream
   stream_names:
     - address
-    - orderitem
+    - product
 streams:
   - type: DeclarativeStream
     name: address
@@ -107,7 +107,7 @@ streams:
       end_datetime: "{{ now_utc() }}"
 
   - type: DeclarativeStream
-    name: orderitem
+    name: orderItem
     primary_key:
       - uuid
     schema_loader:
@@ -116,10 +116,10 @@ streams:
     retriever:
       type: SimpleRetriever
       requester:
-        name: orderitem
+        name: orderItem
         type: HttpRequester
         url_base: https://savoypizza.revelup.com/resources/
-        path: /Orderitem
+        path: /OrderItem
         http_method: GET
         request_parameters: {}
         request_headers: {}
@@ -164,8 +164,6 @@ streams:
       cursor_granularity: "PT0.000001S"
       end_datetime: "{{ now_utc() }}"
   
-
-
 
   - type: DeclarativeStream
     name: customer
@@ -226,6 +224,64 @@ streams:
       cursor_granularity: "PT0.000001S"
       end_datetime: "{{ now_utc() }}"
 
+  - type: DeclarativeStream
+    name: product
+    primary_key:
+        - uuid
+    schema_loader:
+        type: JsonFileSchemaLoader
+        file_path: "./source_revel_new/schemas/product.json"
+          
+    retriever:
+      type: SimpleRetriever
+      requester:
+        name: product
+        type: HttpRequester
+        url_base: https://savoypizza.revelup.com/resources/
+        path: /Product
+        http_method: GET
+        request_parameters: {}
+        request_headers: {}
+        request_body_json: {}
+        authenticator:
+          type: ApiKeyAuthenticator
+          header: API-Authentication
+          api_token: '{{ config["api_key"] }}'
+      record_selector:
+        type: RecordSelector
+        extractor:
+          type: DpathExtractor
+          field_pointer: ["objects"]
+      paginator:
+        url_base: "#/requester/url_base"
+        type: DefaultPaginator
+        page_token_option:
+          type: RequestOption
+          inject_into: request_parameter
+          field_name: offset
+        page_size_option:
+          type: RequestOption
+          field_name: limit
+          inject_into: request_parameter
+        pagination_strategy:
+          type: OffsetIncrement
+          page_size: 300
+      incremental_sync:
+        step: "P1D"
+        type: "DatetimeStreamSlicer"
+        cursor_field: "updated_date"
+        start_datetime: "{{ config['start_date'] }}"
+        datetime_format: '%Y-%m-%dT%H:%M:%S'
+        end_time_option:
+          type: RequestOption
+          field_name: "updated_date__lte"
+          inject_into: "request_parameter"
+        start_time_option:
+          type: RequestOption
+          field_name: "updated_date__gt"
+          inject_into: request_parameter
+        cursor_granularity: "PT0.000001S"
+        end_datetime: "{{ now_utc() }}"
 
 spec: 
   documentation_url: https://docs.airbyte.io/integrations/sources/ravel
