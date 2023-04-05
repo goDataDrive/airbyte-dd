@@ -4,7 +4,11 @@ check:
   type: CheckStream
   stream_names:
     - address
+    - customer
     - product
+    - order
+    - orderitem
+
 streams:
   - type: DeclarativeStream
     name: address
