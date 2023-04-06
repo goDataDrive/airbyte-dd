@@ -111,7 +111,7 @@ streams:
       end_datetime: "{{ now_utc() }}"
 
   - type: DeclarativeStream
-    name: orderItem
+    name: orderitem
     primary_key:
       - uuid
     schema_loader:
@@ -120,7 +120,7 @@ streams:
     retriever:
       type: SimpleRetriever
       requester:
-        name: orderItem
+        name: orderitem
         type: HttpRequester
         url_base: https://savoypizza.revelup.com/resources/
         path: /OrderItem
